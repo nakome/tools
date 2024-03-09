@@ -1,0 +1,83 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Text inspector  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 23-date-generator -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+    <meta charset="<!-- @charset -->" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- $title --></title>
+    <!-- @include partials/meta -->
+    <!-- @include partials/links -->
+</head>
+
+<body>
+    <!-- @include partials/preloader -->
+    <!-- app -->
+    <main class="app is-page">
+        <!-- @include partials/header-page -->
+        <!-- app-content -->
+        <section class="app-content">
+            <aside class="app-sidebar"><!-- @include partials/list --></aside>
+            <section class="app-page">
+                <section class="app-page-sections">
+                    <section class="app-page-section">
+                        <header class="app-page-section-header">
+                            <h3>Input: </h3>
+                            <div class="form-group">
+                                <button class="btn" id="resetBtn">↻ Reset</button>
+                            </div>
+                        </header>
+                        <div class="form-group">
+                            <label for="inputDate">Date</label>
+                            <input type="date" name="date" id="inputDate" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputTime">Time</label>
+                            <input type="time" name="time" id="inputTime" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDateTimestamp">Timestamp</label>
+                            <input type="text" name="timestamp" id="inputDateTimestamp" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDateBinary">Binary</label>
+                            <input type="text" name="binary" id="inputDateBinary" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDateHex">Hex</label>
+                            <input type="text" name="hex" id="inputDateHex" />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDateOctal">Octal</label>
+                            <input type="text" name="octal" id="inputDateOctal" />
+                        </div>
+                        <div class="form-group">
+                            <button id="generate" class="btn" type="button" title="Generate results">⌛ Generate</button>
+                        </div>
+                    </section>
+                    <section class="app-page-section">
+                        <header class="app-page-section-header">
+                            <h3>Output: </h3>
+                        </header>
+                        <pre id="output"></pre>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"
+        integrity="sha512-/n/dTQBO8lHzqqgAQvy0ukBQ0qLmGzxKhn8xKrz4cn7XJkZzy+fAtzjnOQd5w55h4k1kUC+8oIe6WmrGUYwODA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- @include partials/scripts -->
+</body>
+
+</html>

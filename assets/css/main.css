@@ -181,6 +181,9 @@ input[type=email],
 input[type=url],
 input[type=number],
 input[type=text],
+input[type=date],
+input[type=time],
+input[type=text],
 select,
 textarea {
   box-sizing: border-box;
@@ -219,6 +222,7 @@ textarea[name="description"] {
 input:not(input[type="submit"], input[type=checkbox]):is(:hover, :focus),
 select:is(:hover, :focus),
 textarea:is(:hover, :focus) {
+  background:var(--dark);
   border: 1px solid var(--warning);
   outline: 0;
 

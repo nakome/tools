@@ -2,7 +2,7 @@ const appContent = document.querySelector('.app-content');
 const appMenu = document.getElementById('menu');
 const headerTitle = document.getElementById('header-title');
 
-if (!window.location.pathname.includes('editor')) {
+if (headerTitle) {
     const slug = window.location.pathname.replace('/','').replace('.html', '');
     const slugElement = document.querySelector(`nav a[data-slug="${slug}"]`);
     slugElement.className='active';
