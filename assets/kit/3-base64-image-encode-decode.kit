@@ -1,0 +1,58 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Base64 image encode/decode  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 3-base64-image-encode-decode -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar">
+        <!-- @include partials/list -->
+      </aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <h3>Input: </h3>
+              <div class="form-group">
+                <button class="btn" id="copyBtn">📋 Copy</button>
+              </div>
+            </header>
+            <textarea id="textAreaInput" spellcheck="false"></textarea>
+          </section>
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <input type="file" id="image-input" accept="image/*" />
+            </header>
+            <div id="image">
+              <img id="image-display" src="" style="display:none" />
+            </div>
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Json parser  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 8-json-parser -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+  <!-- @include partials/vendor_css -->
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar"><!-- @include partials/list --></aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <h3>Raw: </h3>
+              <div class="form-group">
+                <button class="btn" id="demoBtn">🔨 Demo</button>
+                <button class="btn" id="resetBtn">🔄 Reset</button>
+              </div>
+            </header>
+            <textarea id="textAreaText" spellcheck="false"></textarea>
+          </section>
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <h3>Output: </h3>
+              <div class="form-group">
+                <button class="btn" id="copyBtn">📋 Copy</button>
+              </div>
+            </header>
+            <textarea id="textAreaJson" spellcheck="false"></textarea>
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+    integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"
+    integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

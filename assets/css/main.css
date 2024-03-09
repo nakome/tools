@@ -507,9 +507,14 @@ aside {
               background: var(--secondary);
               border-bottom:1px solid var(--dark);
               color: var(--info);
+              svg{
+                  width: 20px;
+                  height: 20px;
+                  color: color-mix(in srgb, var(--light) 18%, var(--primary))
+              }
               span {
                   margin-left:5px;
-                  font-size: var(--fontSize);
+                  font-size: calc(var(--fontSize) - 3px);
                   font-family: var(--fontFamily);
                   font-weight: bold;
                   transition: all 500ms ease-in-out;
@@ -527,6 +532,21 @@ aside {
               }
           }
       }
+  }
+}
+
+
+@media (max-width:600px) {
+  aside {
+    &.app-sidebar {
+        nav {
+            a {
+                span {
+                    font-size: calc(var(--fontSize));
+                }
+            }
+        }
+    }
   }
 }
 
@@ -671,6 +691,9 @@ aside.app-sidebar {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       z-index: 1;
       position: relative;
+      .app-header-left{width:4rem;}
+      .app-header-center{width:calc(100% - 8rem);}
+      .app-header-right{width:4rem;}
   }
 
   .is-page {

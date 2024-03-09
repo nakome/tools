@@ -1,0 +1,50 @@
+.app {
+    --primary: #282a35;
+    --secondary: #21232d;
+    --info: #22ffff;
+    --warning: #ff7bc6;
+    --danger: #f05c5c;
+    --light: #e7e7e7;
+    --dark: #1f2129;
+    --boxShadow: 0 1px 2px #1f2129;
+}
+
+
+.app-page-section textarea {
+    height: calc(100% - 3rem);
+    border-radius: var(--borderRadius);
+}
+
+#output{
+    margin:10px;
+    padding:0;
+    list-style:none;
+}
+
+#output li {
+    border: 1px solid var(--secondary);
+    margin-bottom: 4px;
+    border-radius: 2px;
+    display: flex
+}
+
+#output li span.key,
+#output li span.value {
+    display: flex;
+    padding: 8px;
+    font-weight:bold;
+    min-height: 40px;
+    height: 100%;
+    background:var(--primary);
+    border-right: 1px solid var(--secondary);
+}
+#output li span.key {
+    width: 120px;
+    justify-content: center;
+    color: var(--light);
+}
+
+#output li span.value {
+    flex: 1;
+    color: var(--warning);
+}

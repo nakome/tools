@@ -1,0 +1,88 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Random string  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 13-random-string -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar"><!-- @include partials/list --></aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+
+            <div class="form-group">
+              <label for="str-number">Number of strings</label>
+              <input type="number" value="10" min="1" max="100" id="str-number">
+            </div>
+
+            <div class="form-group">
+              <label for="str-length">String length</label>
+              <input type="number" value="10" min="1" max="100" id="str-length">
+            </div>
+
+            <div class="form-group-checkbox">
+              <label for="str-unique">
+                <input type="checkbox" id="str-unique"> Unique strings
+              </label>
+            </div>
+
+            <div class="form-group-checkbox">
+              <label for="str-uppercase">
+                <input type="checkbox" id="str-uppercase" checked> Uppercase (A-Z)
+              </label>
+            </div>
+
+            <div class="form-group-checkbox">
+              <label for="str-lowercase">
+                <input type="checkbox" id="str-lowercase"> Lowercase (a-z)
+              </label>
+            </div>
+
+            <div class="form-group-checkbox">
+              <label for="str-numbers">
+                <input type="checkbox" id="str-numbers"> Numbers (0-9)
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="str-custom">Custom strings</label>
+              <input type="text" value="áéíóú" placeholder="áéíóú" id="str-custom">
+            </div>
+
+            <div class="form-group">
+              <button class="btn" id="generate">🚀 Generate</button>
+            </div>
+
+          </section>
+          <section class="app-page-section">
+            <pre id="output"></pre>
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

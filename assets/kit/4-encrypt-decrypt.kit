@@ -1,0 +1,62 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Encrypt and decrypt text with JSEncrypt  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 4-encrypt-decrypt -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+  <!-- @include partials/vendor_css -->
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar">
+        <!-- @include partials/list -->
+      </aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <textarea id="textAreaInput" spellcheck="false" placeholder="String to encrypt">Hola mundo</textarea>
+            <textarea id="textAreaDecrypted" spellcheck="false" placeholder="Test decrypted string"></textarea>
+          </section>
+          <section class="app-page-section">
+            <textarea id="textAreaRsaPrivate" spellcheck="false" placeholder="Place here your Rsa private key">-----BEGIN RSA PRIVATE KEY-----
+MIIBOAIBAAJAeVP9QQ34ArSJ630+wFAPOYUf/cOrBvKClKvG1/RB2uLLUNpO5Tfk
+BTp4/YzdEfcSGtTwKx6O2mPYPO//q9HvSwIDAQABAkAGUYZt3eFdmrNYDTS4ZTL1
+xuYMnCUK/pQoU+3OD01irbyXLk5LBRdnaSLuj1nX9x423bNGwCsbXRD1AGYS+WVR
+AiEAsrqG+2MZJ0mKtXZYz/uhJG3drIiQg/1fJhz3vJnUFkkCIQCtyHArIUG73tMR
+CJHa4jVcnNiAIc8Vn9/X2TYP9lqI8wIgeNyGNy02b0jeEgQr3smMmPPquafIAlmu
+pDlmlhV4RHECIBbRU5EGK9hcGICLDIOd4f3IBlFEnykqtbxko8mSwi5rAiBd4VlH
+5YtIBvRqSeVNQ8KlwcJJ+OyR0T6A9bVXw/8kUQ==
+-----END RSA PRIVATE KEY-----</textarea>
+            <textarea id="textAreaRsaPublic" spellcheck="false" placeholder="Rsa public key"></textarea>
+            <textarea id="textAreaOutput" spellcheck="false" placeholder="String to encrypt"></textarea>
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.3.2/jsencrypt.min.js"
+    integrity="sha512-94ncgEEqkuZ4yNTFmu2dSn1TJ6Ij+ANQqpR7eLVU99kzvYzu6UjBxuVoNHtnd29R+T6nvK+ugCVI698pbyEkvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

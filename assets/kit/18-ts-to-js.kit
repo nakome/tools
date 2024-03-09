@@ -1,0 +1,75 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Typescript to JS  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 18-ts-to-js -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+    <meta charset="<!-- @charset -->" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- $title --></title>
+    <!-- @include partials/meta -->
+    <!-- @include partials/vendor_css -->
+    <!-- @include partials/links -->
+</head>
+
+<body>
+    <!-- @include partials/preloader -->
+    <!-- app -->
+    <main class="app is-page">
+        <!-- @include partials/header-page -->
+        <!-- app-content -->
+        <section class="app-content">
+            <aside class="app-sidebar"><!-- @include partials/list --></aside>
+            <section class="app-page">
+                <section class="app-page-sections">
+                    <section class="app-page-section">
+                        <header class="app-page-section-header">
+                            <button class="btn" id="convertToCss">🚀 Convert to Js</button>
+                        </header>
+                        <textarea id="textAreaInput" spellcheck="false"></textarea>
+                    </section>
+                    <section class="app-page-section">
+                        <textarea id="textAreaOutput" spellcheck="false"></textarea>
+                    </section>
+                </section>
+            </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+        integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"
+        integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/jsx/jsx.min.js"
+        integrity="sha512-+0Bk5jqcZFYMi5WaRZaTboF7s25sht/1pxmg3sXqWDeidrrw1yRqDzF25jsMOnToR8iXSqzrHfAD5wiDO1lwSA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/javascript-lint.min.js"
+        integrity="sha512-8kwyIAPFqkeXy+ZFifnFBF57n5pSsXBBWuy9ME1hPCku0evC+UFNnWZOJlITFe/OMSxGi/oWaccjZ07L6YXzJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js"
+        integrity="sha512-omIxBxPdObb7b3giwJtPBiB86Mey/ds7qyKFcRiaLQgDxoSR+UgCYEFO7jRZzPOCZAICabGCraEhOSa71U1zFA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/lint.min.js"
+        integrity="sha512-fzIkwQa9H8rjoDzpZ9sMOYhgaYwh9nKALWbE1m+7wpiry9PN5OyNcZ9LySotjEysolveRyv2C9pVJ+DbEuKtmQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.js"
+        integrity="sha512-yhmeAerubMLaGAsyS7sE8Oqub6GeTkBDQpkXo2JKHgg7JOCudQvcbDQc5rPxdl7MqcDusTJzSy+ODlyzAwETfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.6/jshint.min.js"
+        integrity="sha512-MCUpdWtSMK1rm+4sWFpfFuz4UTpXEud5p236Otyw1Ea4kdVyNxy+eMHR76u7xfY5DlpDmOzgEhgDq1ZGLHqkCA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/typescript@latest/lib/typescript.js"></script>
+
+    <!-- @include partials/scripts -->
+</body>
+
+</html>

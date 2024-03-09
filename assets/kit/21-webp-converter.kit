@@ -1,0 +1,61 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Webp converter  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 21-webp-converter -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar"><!-- @include partials/list --></aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <input type="file" id="image-input" accept="image/*" />
+            </header>
+            <div id="image">
+              <img id="image-display" src="" style="display:none" />
+            </div>
+          </section>
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <a class="btn" href="#" id="saveToWebp" disabled>💾 Save to Webp</a>
+              <div class="form-group">
+                <label for="minWidth">W:</label>
+                <input type="number" id="minWidth" min="200" max="1080" step="1" value="600" />
+                <label for="minHeight">H:</label>
+                <input type="number" id="minHeight" min="200" max="1080" step="1" value="300" />
+              </div>
+            </header>
+            <div id="output">
+              <img id="image-webp" src="" style="display:none" />
+              <div id="size"></div>
+            </div>
+          </section>
+        </section>
+      </section>
+  </main>
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+.app {
+  --primary: #282a35;
+  --secondary: #21232d;
+  --info: #22ffff;
+  --warning: #ff7bc6;
+  --danger: #f05c5c;
+  --light: #e7e7e7;
+  --dark: #1f2129;
+  --boxShadow: 0 1px 2px #1f2129;
+}
+
+.app-page-section {
+  #output {
+    margin: 0;
+    white-space: pre-wrap;
+    padding:var(--padding);
+    user-select: text;
+    color: var(--light);
+    height: calc(100% - 3rem);
+    overflow-y: auto;
+    line-height:var(--line-height);
+    font-size:var(--font-size);
+    font-family: var(--font-family);
+    font-weight:var(--font-weight);
+    border-radius:var(--borderRadius);
+    background:var(--primary);
+    span {
+      display: block;
+      padding: 2px 5px;
+      color: var(--warning);
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+  .input {
+    width: calc(100% - 10px);
+    margin: 5px;
+    &:first-child{
+      margin-left:0;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,76 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html tools -->
+<!-- $description = Backslash escape/unescape  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = 1-backslash-escape-unescape -->
+
+<!DOCTYPE html>
+<html lang="<!-- @lang -->">
+
+<head>
+  <meta charset="<!-- @charset -->" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><!-- $title --></title>
+  <!-- @include partials/meta -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
+    integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css"
+    integrity="sha512-gFMl3u9d0xt3WR8ZeW05MWm3yZ+ZfgsBVXLSOiFz2xeVrZ8Neg0+V1kkRIo9LikyA/T9HuS91kDfc2XWse0K0A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- @include partials/links -->
+</head>
+
+<body>
+  <!-- @include partials/preloader -->
+  <!-- app -->
+  <main class="app is-page">
+    <!-- @include partials/header-page -->
+    <section class="app-content">
+      <aside class="app-sidebar"> <!-- @include partials/list --></aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <h3>Input: </h3>
+              <div class="form-group">
+                <button class="btn" id="demoBtn">🔨 Demo</button>
+                <button class="btn" id="resetBtn">🔄 Reset</button>
+              </div>
+            </header>
+            <textarea id="textAreaEscaped" spellcheck="false"></textarea>
+          </section>
+          <section class="app-page-section">
+            <header class="app-page-section-header">
+              <h3>Output: </h3>
+              <div class="form-group">
+                <button class="btn" id="resetBtn2">🔄 Reset</button>
+                <button class="btn" id="copyBtn">📋 Copy</button>
+              </div>
+            </header>
+            <textarea id="textAreaUnescaped" spellcheck="false"></textarea>
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+    integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js"
+    integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- @include partials/scripts -->
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!-- app-header -->
+<header class="app-header">
+  <!-- app-header-left -->
+  <section class="app-header-left">
+    <button type="button" title="Render code" id="renderCode">
+      <!-- @include icons/play -->
+    </button>
+    <div class="form-group">
+      <input
+        name="title"
+        id="title"
+        required=""
+        type="text"
+        placeholder="Title"
+        value="My awesome template"
+      />
+    </div>
+  </section>
+
+  <!-- app-header-center -->
+  <section class="app-header-center">
+    <h3><!-- $title --></h3>
+  </section>
+
+  <!-- app-header-right -->
+  <section class="app-header-right">
+    <a
+      class="button"
+      href="/"
+      title="Tools for you"
+    >
+      <!-- @include icons/tools -->
+    </a>
+    <button type="button" title="View full preview" id="toggleview">
+      <!-- @include icons/eye -->
+    </button>
+    <button type="button" title="Create new" id="createNewSnippet">
+      <!-- @include icons/plus -->
+    </button>
+    <button type="button" title="Save code" id="saveHtmlCode">
+      <!-- @include icons/save -->
+    </button>
+    <button type="button" title="Modal settings" id="settingsNew">
+      <!-- @include icons/settings -->
+    </button>
+    <a
+      rel="noopener"
+      target="_blank"
+      class="button"
+      href="https://github.com/nakome"
+      title="Github"
+    >
+      <!-- @include icons/github -->
+    </a>
+  </section>
+</header>

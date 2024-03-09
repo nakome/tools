@@ -1,14 +1,25 @@
+<!-- @lang = en -->
+<!-- @charset = UTF-8 -->
+<!-- $title = Html editor -->
+<!-- $description = Minimal code editor like Codepen  -->
+<!-- $author = Moncho Varela -->
+<!-- $keywords = javascript,editor,Snippex,md -->
+<!-- $tileColor = #282a35 -->
+<!-- $themeColor = #191a21 -->
+<!-- $page = home -->
+
 <!doctype html>
 <html lang="en">
 <head>
     <!-- @include partials/meta -->
     <!-- @include partials/links -->
+    <link rel="stylesheet" href="./assets/css/views/<!-- $page -->/main.min.css">
 </head>
 <body>
     <main class="app is-page">
         <header class="app-header">
             <section class="app-header-left"></section>
-            <section class="app-header-center">Hecho con ❤️ Moncho Varela</section>
+            <section class="app-header-center">Made with ❤️ Moncho Varela</section>
             <section class="app-header-right">
                 <a href="https://github.com/nakome" class="button" title="Go to GitHub">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
@@ -24,6 +35,8 @@
             <!-- @include partials/list -->
         </section>
     </main>
+
     <!-- @include partials/scripts -->
+    <script rel="javascript" type="module" src="./assets/js/views/<!-- $page -->/main.min.js"></script>
 </body>
 </html>
