@@ -1,0 +1,704 @@
+:root {
+  --primary: #282a35;
+  --secondary: #191a21;
+  --info: #6272a4;
+  --warning: #ff79c5;
+  --danger: #ff6b6b;
+  --light: #c9c9c9;
+  --dark: #111114;
+  --boxShadow: 0 1px 2px var(--dark);
+  --fontSize: 14px;
+  --fontWeight: 400;
+  --fontFamily: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --lineHeight: 1.5;
+  --borderRadius: 4px;
+  --padding: 8px 10px;
+  --defaultHeight: 50px;
+  --letterSpacing: 0.5px;
+  --media: 768px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0;
+  visibility: visible;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  letter-spacing: var(--letterSpacing);
+  line-height: var(--lineHeight);
+  animation: onload 200ms 1 ease;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+dialog {
+  min-width: 400px;
+  right: 65%;
+  padding: 0;
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--dark);
+  background: var(--secondary);
+  color: var(--light);
+
+  >header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: var(--padding);
+      user-select: none;
+      background: var(--primary);
+      color: var(--light);
+
+      >button {
+          background: transparent;
+          box-shadow: none;
+          border: none;
+          outline: none;
+          color: var(--light);
+          font-size: 20px;
+          font-weight: var(--fontWeight);
+          font-family: var(--fontFamily);
+          cursor: pointer;
+
+          &:is(:hover, :focus) {
+              color: var(--light);
+          }
+      }
+  }
+
+  >section {
+      padding: var(--padding);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+}
+
+.cm-theme::selection {
+  background: var(--warning);
+  color: var(--dark);
+}
+
+iframe {
+  background: #fff;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--secondary);
+}
+
+::selection {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 5px;
+
+  >label {
+      color: var(--light);
+      font-weight: 700;
+  }
+}
+
+input[type="file"] {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 5px;
+  outline: 0;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  font-weight: var(--fontWeight);
+  padding: var(--padding);
+  width: 100%;
+  border-radius: var(--borderRadius);
+  background: var(--primary);
+  border: 1px solid var(--dark);
+  color: var(--light);
+
+  &::file-selector-button {
+      background-color: var(--secondary);
+      border: 1px solid var(--secondary);
+      box-shadow: var(--boxShadow);
+      border-radius: var(--borderRadius);
+      color: var(--light);
+      cursor: pointer;
+      padding: var(--padding);
+      transition: background-color 0.2s;
+
+      &:is(:hover, :focus, :active) {
+          background-color: var(--info);
+          border-color: var(--info);
+          color: var(--dark);
+      }
+  }
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=text],
+select,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 0;
+  outline: 0;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  font-weight: var(--fontWeight);
+  padding: var(--padding);
+  resize: none;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  background: var(--primary);
+  border: 1px solid var(--dark);
+  color: var(--light);
+
+  &:is(:hover, :focus) {
+      border-color: var(--info);
+  }
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+select {
+  appearance: none;
+  background: var(--primary);
+}
+
+textarea[name="description"] {
+  height: 140px;
+}
+
+input:not(input[type="submit"], input[type=checkbox]):is(:hover, :focus),
+select:is(:hover, :focus),
+textarea:is(:hover, :focus) {
+  border: 1px solid var(--warning);
+  outline: 0;
+
+  &::placeholder {
+      color: var(--warning);
+  }
+
+  &::selection {
+      background: var(--warning);
+      color: var(--dark);
+  }
+}
+
+input[type="submit"] {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  padding: var(--padding);
+}
+
+.form-color {
+  position: relative;
+  margin-top: 10px;
+
+  & span {
+      display: flex;
+      background: var(--primary);
+      width: 100%;
+      border-radius: var(--borderRadius);
+      border: 1px solid var(--dark);
+      box-shadow: var(--boxShadow);
+      padding: var(--padding);
+      font-weight: bold;
+      user-select: all;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      &:is(:hover, :focus) {
+          border: 1px solid var(--info);
+      }
+  }
+
+  & input[type=color] {
+      position: absolute;
+      top: 2.5px;
+      right: 5px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: var(--secondary);
+      height: calc(100% - 5px);
+      border-radius: var(--borderRadius);
+
+      &:is(:hover, :focus) {
+          outline: none !important;
+          border: none !important;
+      }
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-top: 10px;
+}
+
+.btn {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--light);
+  padding: var(--padding);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
+  transition: all 500ms ease;
+
+  &:is(:hover, :focus) {
+      background: color-mix(in srgb, var(--info), var(--primary));
+      border: 1px solid color-mix(in srgb, var(--info), var(--primary));
+      cursor: pointer;
+      transition: all 500ms ease;
+  }
+}
+
+.preloader {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  >.loader {
+      position: relative;
+      width: 50px;
+      height: 50px;
+
+      >svg {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          animation: a 1s linear infinite;
+      }
+  }
+}
+
+@keyframes a {
+  0% {
+      transform: rotate(-1turn);
+  }
+}
+
+
+/** - App
+--------------------------------*/
+.app {
+  background: var(--secondary);
+  font-family: var(--fontFamily);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.is-page .app-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+
+/** - App Header
+--------------------------------*/
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--defaultHeight);
+  justify-content: space-between;
+  padding: 2px;
+  position: relative;
+  user-select: none;
+  z-index: 2;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  background: var(--primary);
+  color: var(--light);
+
+  .form-group {
+      margin: 0;
+
+      >input[type="search"],
+      >input[type="text"] {
+          border: 1px solid var(--info);
+          background: var(--dark);
+          border-radius: 0;
+          box-shadow: none;
+          margin: 0;
+          padding: var(--padding);
+      }
+  }
+
+  >.button,
+  a,
+  button {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin: 2px;
+      padding: var(--padding);
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      color: var(--light);
+
+      &:is(:hover, :focus, :active) {
+          border-color: var(--info);
+          color: var(--info);
+          transition: all 0.5s ease;
+      }
+
+      svg {
+          width: 20px;
+          height: 20px;
+          pointer-events: none;
+      }
+  }
+
+  >.app-header-center,
+  >.app-header-left,
+  >.app-header-right {
+      width: calc(100%/3 - 10px);
+  }
+
+  >.app-header-left {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+  }
+
+  >.app-header-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      width: calc(60% - 10px);
+
+      >h3 {
+          color: var(--info);
+          font-size: 12px;
+          line-height: 1.2;
+          margin: 0;
+          text-transform: uppercase;
+      }
+  }
+
+  >.app-header-right {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  #menu.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--warning);
+  }
+
+  #menu {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--light);
+  }
+
+  #menu svg {
+      width: 25px;
+      height: 25px;
+  }
+}
+
+/** - App Content
+--------------------------------*/
+.app-content {
+  --height: 50px;
+  height: calc(100% - var(--height));
+  overflow-y: scroll;
+  padding: 0;
+  position: relative;
+  user-select: none;
+
+  &::selection {
+      background: var(--warning);
+      color: var(--dark);
+  }
+}
+
+/** - App Sidebar
+--------------------------------*/
+aside {
+  &.app-sidebar {
+      width: 17rem;
+      height: calc(100% - 1px);
+      background: var(--primary);
+      border-top: 1px solid var(--dark);
+      border-right: 1px solid var(--dark);
+      overflow-x: auto;
+
+      nav {
+          margin: 0;
+          padding: 0;
+          a {
+              display: flex;
+              flex-direction: row;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: center;
+
+              text-decoration: none;
+              margin-bottom: 1px;
+              padding: var(--padding);
+              transition: all 500ms ease-in-out;
+              background: var(--secondary);
+              border-bottom:1px solid var(--dark);
+              color: var(--info);
+              span {
+                  margin-left:5px;
+                  font-size: var(--fontSize);
+                  font-family: var(--fontFamily);
+                  font-weight: bold;
+                  transition: all 500ms ease-in-out;
+                  color: var(--light);
+              }
+              &:is(:hover, :focus,.active) {
+                  background: var(--dark);
+                  border-bottom:1px solid var(--dark);
+                  color: var(--info);
+                  transition: all 500ms ease-in-out;
+                  span {
+                      transition: all 500ms ease-in-out;
+                      color: var(--info);
+                  }
+              }
+          }
+      }
+  }
+}
+
+/** - App Page
+--------------------------------*/
+
+.active-menu section.app-page {
+  width: calc(100% - 17rem);
+  height: 100%;
+  margin: 0px;
+}
+
+section.app-page {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+
+  &::-webkit-scrollbar-track {
+      background-color: var(--secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-corner {
+      background-color: var(--primary);
+  }
+}
+
+/** - App Page
+--------------------------------*/
+header.app-page-section-header {
+  height: 3rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary);
+
+  h3 {
+      font-size: var(--font-size);
+      margin: auto 5px;
+  }
+
+  select {
+      width: fit-content;
+      margin: 0 !important;
+      max-height: 37px;
+  }
+
+  .form-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+
+      button {
+          margin-left: 5px;
+      }
+  }
+
+  input[type="file"] {
+      &:is(:hover, :focus) {
+          border-color: var(--primary) !important;
+      }
+
+      &::file-selector-button {
+          padding: 2px 8px;
+          margin: 0;
+          transition: all 500ms ease-in-out;
+
+          &:is(:hover, :focus) {
+              opacity: 0.7;
+              transition: all 500ms ease-in-out;
+          }
+      }
+  }
+}
+
+@media (max-width: 480px) {
+
+  header .app-page-header input[type=search],
+  header .app-page-header input[type=text] {
+      display: none !important;
+  }
+}
+
+/** - App Page
+--------------------------------*/
+section.app-page-sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  user-select: none;
+}
+
+section.app-page-section {
+  width: calc(100% / 2 - 14px);
+  margin: 7px;
+  height: calc(100% - 14px);
+
+  textarea {
+      height: calc(100% - 3rem);
+      width: 100%;
+      margin: 0;
+      background-color: var(--primary);
+  }
+}
+section.app-page-section-full {
+  width: 100%;
+  margin:0;
+  .app-page-section-content {
+      width: 100%;
+      padding:var(--padding);
+  }
+}
+
+aside.app-sidebar {
+  display: none;
+}
+
+.active-menu aside.app-sidebar {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .active-menu aside.app-sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - var(--defaultHeight));
+      z-index: 5;
+  }
+
+  .app-header {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: relative;
+  }
+
+  .is-page {
+      overflow-y: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  section.app-page {
+      overflow-y: auto;
+      width: 100%;
+  }
+
+  section.app-page-sections {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+
+  section.app-page-section:first-child {
+      margin-right: 7px;
+  }
+
+  section.app-page-section {
+      width: calc(100% - 15px) !important;
+  }
+}
+
+div#content {
+  height: 100%;
+}
