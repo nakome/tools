@@ -4,6 +4,7 @@ import generateDateResults from "../../modules/date-generator.js";
 const inputDate = document.getElementById('inputDate');
 const inputTime = document.getElementById('inputTime');
 const resetBtn = document.getElementById('resetBtn');
+const todayBtn = document.getElementById('todayBtn');
 const output = document.getElementById('output');
 const inputDateTimestamp = document.getElementById('inputDateTimestamp');
 const inputDateBinary = document.getElementById('inputDateBinary');
@@ -23,33 +24,50 @@ const generate = document.getElementById('generate');
     })
 })
 
+const clearAllFields = () => {
+    inputDate.value = '';
+    inputTime.value = '';
+    inputDateBinary.value = '';
+    inputDateHex.value = '';
+    inputDateTimestamp.value = '';
+    inputDateOctal.value = '';
+};
+
+[inputDateTimestamp, inputDateBinary, inputDateHex, inputDateOctal].forEach(item =>
+    item.addEventListener('paste', clearAllFields)
+);
+
+
 generate.addEventListener('click', evt => {
     evt.preventDefault();
-    // if octal is set
-    if(inputDateOctal.value) handleOctalConvert();
-    // if binary is set
-    else if (inputDateBinary.value) handleBinaryConvert();
-    // if binary is set
-    else if (inputDateHex.value) handleHexConvert();
-    // if timestamp is set
-    else if (inputDateTimestamp.value) handleTimeStampConvert()
-    // if date and time are set
-    else if (inputDate.value && inputTime.value) handleDateTimeConvert()
-    // if only date is set
-    else if (inputDate.value && inputTime.value.length === 0) handleDateConvert()
-    // if all is empty
-    else if (inputDate.value.length === 0 && inputTime.value.length === 0) handleCreateCurrentDate()
+    const octalValue = inputDateOctal.value;
+    const binaryValue = inputDateBinary.value;
+    const hexValue = inputDateHex.value;
+    const timestampValue = inputDateTimestamp.value;
+    const dateValue = inputDate.value;
+    const timeValue = inputTime.value;
+
+    if (octalValue) handleOctalConvert();
+    else if (binaryValue) handleBinaryConvert();
+    else if (hexValue) handleHexConvert();
+    else if (timestampValue) handleTimeStampConvert();
+    else if (dateValue && timeValue) handleDateTimeConvert();
+    else if (dateValue && !timeValue.length) handleDateConvert();
+    else handleCreateCurrentDate();
 })
+
+todayBtn.addEventListener('click', evt => {
+    // Init with current date
+    handleCreateCurrentDate();
+},false);
 
 // Reset today
 resetBtn.addEventListener('click', evt => {
-    let arr = [inputDateOctal,inputDateBinary,inputDateHex,inputDateTimestamp,inputDate,inputTime];
+    let arr = [inputDateOctal, inputDateBinary, inputDateHex, inputDateTimestamp, inputDate, inputTime];
     arr.forEach(item => item.value = '');
     output.textContent = '';
 }, false);
 
-// Init with current date
-handleCreateCurrentDate();
 
 /**
  * Convert the given octal number to decimal and update the input fields with the converted values.
@@ -58,14 +76,19 @@ handleCreateCurrentDate();
  * @return {type} void
  */
 function handleOctalConvert() {
+    const octalValue = inputDateOctal.value;
+    if (!/^[0-7]+$/.test(octalValue)) {
+        messageTools(document.getElementById('header-title'),'Please insert a valid octal number');
+        return;
+    }
     // Convert number to decimal
-    const d = parseInt(inputDateOctal.value, 8);
+    const d = parseInt(octalValue, 8);
     inputDate.value = new Date(d).toISOString().split('T')[0];
     inputTime.value = new Date(d).toTimeString().split(' ')[0];
     inputDateBinary.value = d.toString(2);
     inputDateTimestamp.value = d.toString(10);
     inputDateHex.value = d.toString(16).toUpperCase();
-    let result = new Date(d);
+    const result = new Date(d);
     output.innerHTML = generateTplTimeResults(result);
 }
 
@@ -73,14 +96,19 @@ function handleOctalConvert() {
  * Convert number to decimal
  */
 function handleBinaryConvert() {
+    const binaryValue = inputDateBinary.value;
+    if (!/^[01]+$/.test(binaryValue)) {
+        messageTools(document.getElementById('header-title'),'Please insert a valid binary number');
+        return;
+    }
     // Convert number to decimal
-    const d = parseInt(inputDateBinary.value, 2);
+    const d = parseInt(binaryValue, 2);
     inputDate.value = new Date(d).toISOString().split('T')[0];
     inputTime.value = new Date(d).toTimeString().split(' ')[0];
     inputDateTimestamp.value = d.toString(10);
     inputDateHex.value = d.toString(16).toUpperCase();
     inputDateOctal.value = d.toString(8);
-    let result = new Date(d);
+    const result = new Date(d);
     output.innerHTML = generateTplTimeResults(result);
 }
 
@@ -91,16 +119,22 @@ function handleBinaryConvert() {
  * @return {type} void
  */
 function handleHexConvert() {
+    const hexValue = inputDateHex.value;
+    if (!/^[0-9A-Fa-f]+$/.test(hexValue)) {
+        messageTools(document.getElementById('header-title'),'Please insert a valid hexadecimal number');
+        return;
+    }
     // Convert number to decimal
-    const d = parseInt(inputDateHex.value, 16);
+    const d = parseInt(hexValue, 16);
     inputDate.value = new Date(d).toISOString().split('T')[0];
     inputTime.value = new Date(d).toTimeString().split(' ')[0];
     inputDateTimestamp.value = d.toString(10);
     inputDateBinary.value = d.toString(2);
     inputDateOctal.value = d.toString(8);
-    let result = new Date(d);
+    const result = new Date(d);
     output.innerHTML = generateTplTimeResults(result);
 }
+
 
 /**
  * Convert a timestamp and update inputDate and inputTime values,
@@ -111,12 +145,16 @@ function handleHexConvert() {
  */
 function handleTimeStampConvert() {
     const d = parseInt(inputDateTimestamp.value);
+    if (isNaN(d)) {
+        messageTools(document.getElementById('header-title'),'Please insert a valid timestamp number');
+        return;
+    }
     inputDate.value = new Date(d).toISOString().split('T')[0];
     inputTime.value = new Date(d).toTimeString().split(' ')[0];
     inputDateBinary.value = d.toString(2);
     inputDateOctal.value = d.toString(8);
     inputDateHex.value = d.toString(16).toUpperCase();
-    let result = new Date(d);
+    const result = new Date(d);
     output.innerHTML = generateTplTimeResults(result);
 }
 
@@ -180,3 +218,13 @@ function generateTplTimeResults(result) {
     }
     return tpl;
 }
+
+function messageTools(id,txt) {
+    let old = id.textContent;
+    id.textContent = txt;
+    id.style.color = 'var(--danger)';
+    setTimeout(() => {
+      id.textContent = old;
+      id.style.color = 'var(--info)';
+    }, 3000);
+  }

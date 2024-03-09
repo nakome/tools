@@ -7,8 +7,9 @@ import { headerTitle } from "../../js/views/0-html-editor/controllers/defaultVar
  * @return {void}
  */
 export default function message(txt) {
+  let old = headerTitle.textContent;
   headerTitle.textContent = txt;
   setTimeout(() => {
-    headerTitle.textContent = "Html Editor";
+    headerTitle.textContent = old;
   }, 3000);
 }
