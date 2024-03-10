@@ -1,14 +1,3 @@
-.app {
-    --primary: #282a35;
-    --secondary: #21232d;
-    --info: #22ffff;
-    --warning: #ff7bc6;
-    --danger: #f05c5c;
-    --light: #e7e7e7;
-    --dark: #1f2129;
-    --boxShadow: 0 1px 2px #1f2129;
-}
-
 pre#output {
     margin: 0;
     white-space: nowrap;
