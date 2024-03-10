@@ -24,6 +24,7 @@ export default function generateDateResults(d,lang) {
     const totalSecondsAgo = Math.floor((currentDate - birthTime) / 1000);
 
     return {
+        default: date,
         timestamp: birthTime,
         utc: date.toUTCString(),
         iso: date.toISOString(),
@@ -49,12 +50,12 @@ export default function generateDateResults(d,lang) {
         binary: birthTime.toString(2),
         hex: parseInt(birthTime.toString(2), 2).toString(16).toUpperCase(),
         octal: parseInt(birthTime.toString(2), 2).toString(8),
-        years_ago: yearsAgo.toLocaleString()+' Years',
-        months_ago: monthsAgo.toLocaleString()+' Months',
-        weeks_ago: totalAgeWeeks.toLocaleString()+' Weeks',
-        days_ago: totalDaysAgo.toLocaleString()+' Days',
-        hours_ago: totalHoursAgo.toLocaleString()+' Hours',
-        minutes_ago: totalMinutesAgo.toLocaleString()+' Minutes',
-        seconds_ago: totalSecondsAgo.toLocaleString()+' Seconds',
+        years: yearsAgo.toLocaleString(),
+        months: monthsAgo.toLocaleString(),
+        weeks: totalAgeWeeks.toLocaleString(),
+        days: totalDaysAgo.toLocaleString(),
+        hours: totalHoursAgo.toLocaleString(),
+        minutes: totalMinutesAgo.toLocaleString(),
+        seconds: totalSecondsAgo.toLocaleString(),
     };
 }
