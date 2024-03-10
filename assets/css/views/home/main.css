@@ -29,6 +29,7 @@ nav a {
   align-items: center;
   text-align: center;
   min-height: 10rem;
+  text-decoration: none;
   border-radius: var(--borderRadius);
   box-shadow: var(--boxShadow);
   background: var(--primary);
@@ -36,11 +37,9 @@ nav a {
   transition: all 500ms ease-in-out;
 
   &:is(:hover,:focus,:focus-visible) {
-    outline-color: var(--warning);
-    outline-style: solid;
-    outline-width: 2px;
+    outline: none;
     background: var(--dark);
-    border: 1px solid var(--warning);
+    border: 1px solid var(--light);
     transition: all 500ms ease-in-out;
   }
 }
@@ -48,7 +47,7 @@ nav a {
 svg {
   width: 52px;
   height: 52px;
-  color: var(--warning);
+  color: var(--light);
 }
 
 span {
