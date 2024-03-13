@@ -17,6 +17,7 @@ pre#output {
     min-height: 10rem;
     user-select: text;
     margin-bottom: 10px;
+    max-height: calc(100% - 3rem);
     .key{
         color:var(--warning);
     }
