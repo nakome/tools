@@ -1,8 +1,9 @@
 section.app-page-section{
+  margin:2px;
   margin-bottom:0;
   width:calc(60% - 15px);
   &:first-child{
-    width:calc(40% - 15px);
+    width:calc(40% - 0px);
   }
   > textarea{
     height:calc(100%/2 - 2px);

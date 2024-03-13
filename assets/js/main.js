@@ -9,10 +9,8 @@ if (headerTitle) {
     headerTitle.innerText = slugElement.title;
 }
 
-if (!navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    appMenu && appMenu.classList.toggle('active');
-    appContent && appContent.classList.toggle('active-menu');
-}
+appMenu && appMenu.classList.remove('active');
+appContent && appContent.classList.remove('active-menu');
 
 // You can detect when the document is ready…
 document.addEventListener('DOMContentLoaded', () => {
