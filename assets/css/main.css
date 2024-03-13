@@ -700,6 +700,16 @@ input[type="submit"] {
       transition: all 500ms ease;
   }
 }
+.is-link {
+  padding:0 4px;
+  transition: all 500ms ease;
+
+  &:is(:hover, :focus) {
+      cursor: pointer;
+      color:var(--warning);
+      transition: all 500ms ease;
+  }
+}
 
 .preloader {
   position: fixed;
@@ -763,7 +773,7 @@ input[type="submit"] {
   position: relative;
   user-select: none;
   z-index: 2;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   background: var(--primary);
   color: var(--light);
 
@@ -782,7 +792,7 @@ input[type="submit"] {
   }
 
   >.button,
-  a,
+  a:not(.is-link),
   button {
       align-items: center;
       cursor: pointer;
