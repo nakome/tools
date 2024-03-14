@@ -12,7 +12,7 @@ let x = '';
 let y = '';
 
 imgInput.addEventListener('change', evt => {
-    fake.innerHTML = evt.currentTarget.value.replace('C:\\fakepath\\', '');
+    fake.innerHTML = evt.currentTarget.value.replace('C:\\fakepath\\', '🎞️ - ');
 }, false);
 
 
@@ -71,7 +71,7 @@ function useCanvas(el, image, callback) {
     return callback();
 }
 
-// convert rgba to hex 
+// convert rgba to hex
 // http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
 function componentToHex(c) {
     var hex = c.toString(16);
@@ -83,13 +83,13 @@ function rgbToHex(r, g, b) {
 }
 
 function findPos(obj) {
-    var curleft = 0, curtop = 0;
+    let x = 0, y = 0;
     if (obj.offsetParent) {
         do {
-            curleft += obj.offsetLeft;
-            curtop += obj.offsetTop;
+            x += obj.offsetLeft;
+            y += obj.offsetTop;
         } while (obj = obj.offsetParent);
-        return { x: curleft, y: curtop };
+        return { x: x, y: y };
     }
     return undefined;
 }

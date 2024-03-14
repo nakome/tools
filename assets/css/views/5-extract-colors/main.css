@@ -8,9 +8,10 @@
 .thumbnail {
     position: relative;
     display: block;
-    width: 90%;
+    width: calc(100% - 3rem);
+    max-width: 768px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 5px;
     margin-top: 60px;
     img {
         display: block;
@@ -77,16 +78,4 @@
     float: left;
     background: var(--primary);
     color: var(--light);
-}
-
-@media (min-width: 768px) {
-    .thumbnail {
-        width: 85%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .thumbnail {
-        width: 55%;
-    }
 }
