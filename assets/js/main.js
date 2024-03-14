@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
 }, false);
 
-
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
         document.querySelector('.preloader').style.display = "none";

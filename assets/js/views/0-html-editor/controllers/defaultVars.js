@@ -42,10 +42,10 @@ export const verticalSplitView = Split(["#split-v-0", "#split-v-1", "#split-v-2"
 
 // Get the textareas
 const listOfAreas = [spv0, spv1, spv2].map((e) => e.querySelector("textarea"));
+
 // Create CodeMirror instances using the cached results
 export const editors = listOfAreas.map((textarea, index) => {
-  const mode =
-    index === 0 ? "htmlmixed" : index === 1 ? "text/css" : "text/javascript";
+  const mode = index === 0 ? "htmlmixed" : index === 1 ? "text/css" : "text/javascript";
   return CodeMirror.fromTextArea(textarea, {
     lineNumbers: true,
     lineWrapping: true,
@@ -53,5 +53,7 @@ export const editors = listOfAreas.map((textarea, index) => {
     matchBrackets: true,
     mode: mode,
     theme: "dracula",
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+    foldGutter: true,
   });
 });
