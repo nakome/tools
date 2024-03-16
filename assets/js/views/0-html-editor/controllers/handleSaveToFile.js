@@ -63,6 +63,8 @@ async function oncreateFn() {
     lineLength: 80, // Establecer la longitud máxima de línea
     mode: "htmlmixed",
     theme: "dracula",
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+    foldGutter: true,
   });
 
   // Create links and scripts
