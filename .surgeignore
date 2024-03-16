@@ -2,3 +2,8 @@
 assets/kit/*
 prepros.config
 README.md
+
+node-modules/
+
+package-lock.json
+package.json
