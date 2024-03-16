@@ -1,4 +1,4 @@
-import generateDateResults from "../../modules/date-generator.js";
+import generateDateResults from "../../modules/generateDateResults.js";
 
 // Vars
 const inputDate = document.getElementById("inputDate");

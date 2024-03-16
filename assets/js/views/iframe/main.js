@@ -16,7 +16,7 @@ window.addEventListener("message", function (e) {
       textContent: decodeUnicode(t.body.css),
     });
 
-    createElement("main", document.body, {
+    createElement("div", document.body, {
       innerHTML: decodeUnicode(t.body.content),
     });
 
@@ -28,10 +28,10 @@ window.addEventListener("message", function (e) {
 createElement("script", document.body, {
   src: "https://cdn.jsdelivr.net/npm/eruda",
   onload: function () {
-    const el = document.createElement('div');
+    const el = document.createElement("div");
     document.body.appendChild(el);
     eruda.init({
-      tool: ["console", "elements","network"],
+      tool: ["console", "elements", "network"],
       defaults: {
         displaySize: 40,
         theme: "Dracula",
@@ -39,6 +39,8 @@ createElement("script", document.body, {
     });
     eruda.show();
     // If detect mobile device toggle the view
-    if (navigator.userAgent.toLowerCase().match(/mobile/i)) {eruda.hide();}
+    if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
+      eruda.hide();
+    }
   },
 });
