@@ -1,6 +1,6 @@
 # Tools
 
-is a set of simple tools for web development.
+Set of simple tools for web development.
 
 - [HTML Editor](https://snippex.surge.sh/0-html-editor.html): Tool for editing and manipulating HTML code.
 - [Markdown Editor](https://snippex.surge.sh/24-md-editor.html): Text editor in Markdown format, which can be converted to HTML.
@@ -27,6 +27,8 @@ is a set of simple tools for web development.
 - [WEBP Converter](https://snippex.surge.sh/21-webp-converter.html): Converts images to WEBP format.
 - [YAML to JSON](https://snippex.surge.sh/22-yaml-to-json.html): Converts YAML data to JSON.
 - [Date generator](https://snippex.surge.sh/23-date-generator.html): Generates dates and times with various configurations.
+- [Regex tester](https://snippex.surge.sh/25-regex-tester.html): Simply Regex test tool.
+
 
 To edit the application I have used Prepros which is a tool that compiles your files, transpiles your JavaScript, reloads your browsers and makes it really easy to develop & test your websites so you can focus on making them perfect. [➡️ Prepros ](https://prepros.io/)
 

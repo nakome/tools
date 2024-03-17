@@ -1,0 +1,121 @@
+<h3>Regular Expressions Examples</h3>
+
+<ul>
+    <li>
+        <strong>Pattern:</strong> <code>/\w/g</code>
+        <br>
+        <strong>Description:</strong> Character search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/^\w+$/</code>
+        <br>
+        <strong>Description:</strong> Validating a name. Matches strings containing only letters and numbers.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\W/g</code>
+        <br>
+        <strong>Description:</strong> Non-character search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\d/g</code>
+        <br>
+        <strong>Description:</strong> Digit or number search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\D/g</code>
+        <br>
+        <strong>Description:</strong> Non-digit search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\s/g</code>
+        <br>
+        <strong>Description:</strong> Whitespace search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\S/g</code>
+        <br>
+        <strong>Description:</strong> Non-whitespace search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\n/</code>
+        <br>
+        <strong>Description:</strong> New line position search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\f/</code>
+        <br>
+        <strong>Description:</strong> Form feed position search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\r/</code>
+        <br>
+        <strong>Description:</strong> Carriage return position search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\t/</code>
+        <br>
+        <strong>Description:</strong> Tab position search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\v/</code>
+        <br>
+        <strong>Description:</strong> Vertical tab position search.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/o+/g</code>
+        <br>
+        <strong>Description:</strong> Global search for letter 'o'.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/10?/g</code>
+        <br>
+        <strong>Description:</strong> Global search for '10' with optional '0'.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/te?/g</code>
+        <br>
+        <strong>Description:</strong> Global search for 'te' with optional 'e'.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\d{3}/g</code>
+        <br>
+        <strong>Description:</strong> Search for numbers with 3 digits.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\d{4,}/g</code>
+        <br>
+        <strong>Description:</strong> Search for numbers with at least 4 digits.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/\d{4,6}/g</code>
+        <br>
+        <strong>Description:</strong> Search for numbers with 4 to 6 digits.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/.html$/</code>
+        <br>
+        <strong>Description:</strong> Search for '.html' at the end of a string.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code> /^https:/</code>
+        <br>
+        <strong>Description:</strong> Search for 'https:' at the beginning of a string.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/example(?!.com)/g</code>
+        <br>
+        <strong>Description:</strong> Search for 'example' not followed by '.com'.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/example(?=.com)/g</code>
+        <br>
+        <strong>Description:</strong> Search for 'example' only followed by '.com'.
+    </li>
+    <li>
+        <strong>Pattern:</strong> <code>/https?:\/\/[^\s]+/g</code>
+        <br>
+        <strong>Description:</strong> Search for URLs.
+        <br>
+        <strong>Explanation:</strong> We use <code>https?</code> to search where 's' is optional. <code>:\/\/</code> matches <code>://</code>. <code>[^\s]+</code> Matches one or more characters that are not whitespace. We use the <code>g</code> global flag to find all matches in the string.
+    </li>
+</ul>
