@@ -1,0 +1,39 @@
+section.app-page-section:first-child {
+  width: 350px;
+  padding: 10px;
+}
+
+section.app-page-section:last-child {
+  width: calc(100% - 390px);
+  margin: 10px;
+  height: calc(100% - 3rem);
+}
+
+#output span {
+  display: block;
+  padding: 2px 5px;
+  color: var(--light);
+  letter-spacing: 1.5px;
+}
+
+pre#output {
+  margin: 0;
+  padding: var(--padding);
+  overflow: auto;
+  min-height: 8rem;
+  user-select: text;
+  background: var(--primary);
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--dark);
+  height:100%;
+}
+
+input[type=checkbox] {
+  filter: invert(1) contrast(0.9);
+}
+
+.form-group-checkbox label {
+  display: grid;
+  grid-template-columns: 20px auto;
+  gap: 5px;
+}

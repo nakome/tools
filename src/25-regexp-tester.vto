@@ -1,0 +1,66 @@
+---
+lang: en
+charset: UTF-8
+title: Regexp tester
+description: Simply Regexp tester
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+page: 25-regexp-tester
+style: ./assets/css/views/25-regexp-tester/main.css
+javascript: ./assets/js/views/25-regexp-tester/main.js
+url: /25-regexp-tester.html
+---
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="{{charset}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{title}}</title>
+
+  {{ include "components/meta.vto"}}
+  {{ include "components/links.vto"}}
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="{{style}}">
+</head>
+
+<body>
+  {{ include "components/preloader.vto"}}
+  <!-- app -->
+  <main class="app is-page">
+    {{ include "components/header-page.vto"}}
+    <!-- app-content -->
+    <section class="app-content">
+      <aside class="app-sidebar">
+        {{ include "components/list.vto"}}
+      </aside>
+      <section class="app-page">
+        <section class="app-page-sections">
+          <section class="app-page-section">
+            <div class="form-group">
+                <label>Regex</label>
+                <input type="text" id="regex" value="/\d/g" />
+                <pre id="msg"></pre>
+            </div>
+            <div id="output" spellcheck="false" contenteditable>In the digital age, we are constantly bombarded with information from all directions. From the moment we wake up to the time we go to bed, our lives are intertwined with technology and media. We use smartphones to communicate with friends and family, browse social media for entertainment, and rely on computers for work and education.
+                As we navigate this interconnected world, we encounter a myriad of characters, symbols, and numbers. From the letters of the alphabet to punctuation marks like commas and periods, each symbol plays a crucial role in conveying meaning and facilitating communication. Additionally, we encounter digits ranging from 0 to 9, which are used for numerical representation and calculations.
+                Moreover, our digital landscape is filled with special characters such as @, #, $, %, and &, which serve various functions in different contexts. For example, the @ symbol is commonly used in email addresses, while the # symbol is often used in social media hashtags. These characters add richness and complexity to our online interactions, allowing us to express ourselves in unique ways.
+                In conclusion, the digital world is a diverse and dynamic environment filled with characters, digits, and elements that shape our everyday experiences. By understanding and embracing this diversity, we can navigate the digital landscape with confidence and creativity.</div>
+          </section>
+          <section class="app-page-section">
+            {{ include "components/regexp-menu.vto"}}
+          </section>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
+  <script rel="javascript" type="module" src="{{javascript}}"></script>
+</body>
+
+</html>

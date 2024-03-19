@@ -1,0 +1,33 @@
+---
+lang: en
+charset: UTF-8
+title: 404 not found
+description: Sorry, this page not exist
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+page: 200
+style: ./assets/css/views/200/main.css
+javascript: ./assets/js/views/200/main.js
+url: /200.html
+---
+<!doctype html>
+<html lang="{{ charset }}">
+<head>
+    {{ include "components/meta.vto"}}
+    <link rel="stylesheet" href="{{style}}"/>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>{{ title }}</h1>
+            <p>
+                {{ description }} 
+                <a href="/" title="Go back home">Go back home 🏠</a>
+            </p>
+        </section>
+    </main>
+    <script rel="javascript" type="module" src="{{javascript}}"></script>
+</body>
+</html>

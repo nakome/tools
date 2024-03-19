@@ -1,0 +1,53 @@
+---
+lang: en
+charset: UTF-8
+title: Yaml to Json
+description: Convert Yaml to Json
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+page: 21-webp-converter
+style: ./assets/css/views/21-webp-converter/main.css
+javascript: ./assets/js/views/21-webp-converter/main.js
+url: /21-webp-converter.html
+layout: layouts/tool.vto
+---
+
+  <!-- app -->
+  <main class="app is-page">
+    {{ include "components/header-page.vto"}}
+      <!-- app-content -->
+      <section class="app-content">
+          <aside class="app-sidebar">
+            {{ include "components/list.vto"}}
+          </aside>
+          <section class="app-page">
+            <section class="app-page-sections">
+              <section class="app-page-section">
+                <header class="app-page-section-header">
+                  <input type="file" id="image-input" accept="image/*" />
+                </header>
+                <div id="image">
+                  <img id="image-display" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" style="display:none" />
+                </div>
+              </section>
+              <section class="app-page-section">
+                <header class="app-page-section-header">
+                  <a class="btn" href="#" id="saveToWebp" disabled>💾 Save to Webp</a>
+                  <div class="form-group">
+                    <label for="minWidth">W:</label>
+                    <input type="number" id="minWidth" min="200" max="1080" step="1" value="600" />
+                    <label for="minHeight">H:</label>
+                    <input type="number" id="minHeight" min="200" max="1080" step="1" value="300" />
+                  </div>
+                </header>
+                <div id="output">
+                  <img id="image-webp" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" style="display:none" />
+                  <div id="size"></div>
+                </div>
+              </section>
+            </section>
+          </section>
+      </section>
+  </main>

@@ -1,0 +1,37 @@
+---
+lang: en
+charset: UTF-8
+title: Html editor
+description: Minimal code editor like Codepen
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+style: ./assets/css/views/home/main.css
+javascript: ./assets/js/views/home/main.js
+page: home
+layout: layouts/tool.vto
+---
+
+  <main class="app is-page">
+      <header class="app-header">
+          <section class="app-header-left"></section>
+          <section class="app-header-center">
+              Made with ❤️
+              <a href="https://monchovarela.es" title="Mi web" class="is-link">Moncho Varela</a>
+          </section>
+          <section class="app-header-right">
+              <a href="https://github.com/nakome" class="button" title="Go to GitHub">
+                  {{ include "icons/github.vto"}}
+              </a>
+          </section>
+      </header>
+      <section class="app-content">
+          {{ include "components/list.vto"}}
+      </section>
+  </main>
+
+  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
+  <script rel="javascript" type="module" src="{{javascript}}"></script>
+
+

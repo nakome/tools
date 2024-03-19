@@ -1,0 +1,116 @@
+---
+links:
+  - title: HTML Editor
+    url: ./0-html-editor.html
+    slug: 0-html-editor
+    icon: home.vto
+  - title: Markdown Editor
+    url: ./24-md-editor.html
+    slug: 24-md-editor
+    icon: markdown.vto
+  - title: Backslash Escape/Unescape
+    url: ./1-backslash-escape-unescape.html
+    slug: 1-backslash-escape-unescape
+    icon: backslash.vto
+  - title: Base64 Encode/Decode String
+    url: ./2-base64-encode-decode.html
+    slug: 2-base64-encode-decode
+    icon: letter.vto
+  - title: Base64 Image Encode/Decode
+    url: ./3-base64-image-encode-decode.html
+    slug: 3-base64-image-encode-decode
+    icon: image.vto
+  - title: Encrypt/Decrypt
+    url: ./4-encrypt-decrypt.html
+    slug: 4-encrypt-decrypt
+    icon: encrypt.vto
+  - title: Extract Colors
+    url: ./5-extract-colors.html
+    slug: 5-extract-colors
+    icon: images.vto
+  - title: Beautify/Minify HTML
+    url: ./6-html-beautify-minify.html
+    slug: 6-html-beautify-minify
+    icon: beautify.vto
+  - title: HTML Sanitizer
+    url: ./7-html-sanitizer.html
+    slug: 7-html-sanitizer
+    icon: sanitizer.vto
+  - title: JSON Parser
+    url: ./8-json-parser.html
+    slug: 8-json-parser
+    icon: parser.vto
+  - title: JSON to YAML
+    url: ./9-json-to-yaml.html
+    slug: 9-json-to-yaml
+    icon: yaml.vto
+  - title: Lorem Ipsum Generator
+    url: ./10-lorem-ipsum.html
+    slug: 10-lorem-ipsum
+    icon: lorem.vto
+  - title: Markdown to HTML
+    url: ./11-markdown-to-html.html
+    slug: 11-markdown-to-html
+    icon: markdown.vto
+  - title: Placeholder Image Generator
+    url: ./12-placeholder-image-generator.html
+    slug: 12-placeholder-image-generator
+    icon: placeholder.vto
+  - title: Random String
+    url: ./13-random-string.html
+    slug: 13-random-string
+    icon: random.vto
+  - title: RSA Key Generator
+    url: ./14-rsa-key-generator.html
+    slug: 14-rsa-key-generator
+    icon: rsa.vto
+  - title: SCSS to CSS
+    url: ./15-scss-to-css.html
+    slug: 15-scss-to-css
+    icon: scss.vto
+  - title: SVG Viewer
+    url: ./16-svg-viewer.html
+    slug: 16-svg-viewer
+    icon: svg.vto
+  - title: Text Inspector
+    url: ./17-text-inspector.html
+    slug: 17-text-inspector
+    icon: txt.vto
+  - title: Typescript to JS
+    url: ./18-ts-to-js.html
+    slug: 18-ts-to-js
+    icon: ts.vto
+  - title: URL Encode/Decode
+    url: ./19-url-encode-decode.html
+    slug: 19-url-encode-decode
+    icon: url.vto
+  - title: URL Parser
+    url: ./20-url-parser.html
+    slug: 20-url-parser
+    icon: url-parser.vto
+  - title: WEBP Converter
+    url: ./21-webp-converter.html
+    slug: 21-webp-converter
+    icon: webp.vto
+  - title: YAML to JSON
+    url: ./22-yaml-to-json.html
+    slug: 22-yaml-to-json
+    icon: json.vto
+  - title: Date generator
+    url: ./23-date-generator.html
+    slug: 23-date-generator
+    icon: clock.vto
+  - title: Regexp tester
+    url: ./25-regexp-tester.html
+    slug: 25-regexp-tester
+    icon: regexp.vto
+---
+
+<nav>
+  {{ for link of links }}
+    <a href="{{link.url}}" title="{{link.title}}" data-slug="{{link.slug}}">
+      {{ include `icons/${link.icon}`}}
+      <span>{{link.title}}</span>
+    </a>
+  {{ /for}}
+</nav>

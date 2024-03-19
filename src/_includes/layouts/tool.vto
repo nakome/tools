@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="{{charset}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{title}}</title>
+
+  {{ include "components/meta.vto"}}
+  {{ include "components/links.vto"}}
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="{{style}}">
+</head>
+
+<body>
+
+  {{ include "components/preloader.vto"}}
+
+  {{ content }}
+
+  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
+  <script rel="javascript" type="module" src="{{javascript}}"></script>
+</body>
+
+</html>

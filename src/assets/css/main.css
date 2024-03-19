@@ -1,0 +1,1134 @@
+:root {
+  --primary: #282a35;
+  --secondary: #191a21;
+  --info: #6272a4;
+  --warning: #ff79c5;
+  --danger: #ff6b6b;
+  --light: #c9c9c9;
+  --dark: #111114;
+  --boxShadow: 0 1px 2px var(--dark);
+  --fontSize: 14px;
+  --fontWeight: 400;
+  --fontFamily: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --fontFamilyCode:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --lineHeight: 1.5;
+  --borderRadius: 4px;
+  --padding: 8px 10px;
+  --defaultHeight: 50px;
+  --letterSpacing: 0.5px;
+  --media: 768px;
+}
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: var(--light);
+}
+
+::before,
+::after {
+  --content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+  font-family:var(--fontFamily);
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+body {
+  margin: 0;
+  line-height: inherit;
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--fontFamilyCode);
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+  font-size: 1em;
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  color: var(--light);
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: var(--light);
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  opacity: 1;
+  overflow: hidden;
+  padding: 0;
+  visibility: visible;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  font-weight: var(--fontWeight);
+  letter-spacing: var(--letterSpacing);
+  line-height: var(--lineHeight);
+  animation: onload 200ms 1 ease;
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+dialog {
+  min-width: 400px;
+  right: 65%;
+  padding: 0;
+  border-radius: var(--borderRadius);
+  border: 1px solid var(--dark);
+  background: var(--secondary);
+  color: var(--light);
+
+  >header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: var(--padding);
+      user-select: none;
+      background: var(--primary);
+      color: var(--light);
+
+      >button {
+          background: transparent;
+          box-shadow: none;
+          border: none;
+          outline: none;
+          color: var(--light);
+          font-size: 20px;
+          font-weight: var(--fontWeight);
+          font-family: var(--fontFamily);
+          cursor: pointer;
+
+          &:is(:hover, :focus) {
+              color: var(--light);
+          }
+      }
+  }
+
+  >section {
+      padding: var(--padding);
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  height: 16px;
+  width: 16px;
+}
+
+.cm-theme::selection {
+  background: var(--warning);
+  color: var(--dark);
+}
+
+iframe {
+  background: #fff;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--secondary);
+}
+
+::selection {
+  background: var(--dark);
+  color: var(--light);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 5px;
+
+  >label {
+      color: var(--light);
+      font-weight: 700;
+  }
+}
+
+input[type="file"] {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 5px;
+  outline: 0;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  font-weight: var(--fontWeight);
+  padding: var(--padding);
+  width: 100%;
+  border-radius: var(--borderRadius);
+  background: var(--primary);
+  border: 1px solid var(--dark);
+  color: var(--light);
+
+  &::file-selector-button {
+      background-color: var(--secondary);
+      border: 1px solid var(--secondary);
+      box-shadow: var(--boxShadow);
+      border-radius: var(--borderRadius);
+      color: var(--light);
+      cursor: pointer;
+      padding: var(--padding);
+      transition: background-color 0.2s;
+
+      &:is(:hover, :focus, :active) {
+          background-color: var(--info);
+          border-color: var(--info);
+          color: var(--dark);
+      }
+  }
+}
+
+label {
+  display: block;
+  margin: 5px 0;
+}
+
+input,
+input[type=email],
+input[type=url],
+input[type=number],
+input[type=text],
+input[type=date],
+input[type=time],
+input[type=text],
+select,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 0;
+  outline: 0;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  font-weight: var(--fontWeight);
+  padding: var(--padding);
+  resize: none;
+  width: 100%;
+  border-radius: var(--borderRadius);
+  background: var(--primary);
+  border: 1px solid var(--dark);
+  color: var(--light);
+
+  &:is(:hover, :focus) {
+      border-color: var(--info);
+  }
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+select {
+  appearance: none;
+  background: var(--primary);
+}
+
+textarea[name="description"] {
+  height: 140px;
+}
+
+input:not(input[type="submit"], input[type=checkbox]):is(:hover, :focus),
+select:is(:hover, :focus),
+textarea:is(:hover, :focus) {
+  background:var(--dark);
+  border: 1px solid var(--warning);
+  outline: 0;
+
+  &::placeholder {
+      color: var(--warning);
+  }
+
+  &::selection {
+      background: var(--warning);
+      color: var(--dark);
+  }
+}
+
+input[type="submit"] {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  padding: var(--padding);
+}
+
+.form-color {
+  position: relative;
+  margin-top: 10px;
+
+  & span {
+      display: flex;
+      background: var(--primary);
+      width: 100%;
+      border-radius: var(--borderRadius);
+      border: 1px solid var(--dark);
+      box-shadow: var(--boxShadow);
+      padding: var(--padding);
+      font-weight: bold;
+      user-select: all;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      &:is(:hover, :focus) {
+          border: 1px solid var(--info);
+      }
+  }
+
+  & input[type=color] {
+      position: absolute;
+      top: 2.5px;
+      right: 5px;
+      padding: 0;
+      margin: 0;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      background: var(--secondary);
+      height: calc(100% - 5px);
+      border-radius: var(--borderRadius);
+      width: 3rem;
+      &:is(:hover, :focus) {
+          outline: none !important;
+          border: none !important;
+      }
+  }
+}
+
+.form-group {
+  position: relative;
+  margin-top: 10px;
+}
+
+.btn {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--light);
+  padding: var(--padding);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--boxShadow);
+  transition: all 500ms ease;
+
+  &:is(:hover, :focus) {
+      background: color-mix(in srgb, var(--info), var(--primary));
+      border: 1px solid color-mix(in srgb, var(--info), var(--primary));
+      cursor: pointer;
+      transition: all 500ms ease;
+  }
+}
+.is-link {
+  padding:0 4px;
+  transition: all 500ms ease;
+
+  &:is(:hover, :focus) {
+      cursor: pointer;
+      color:var(--warning);
+      transition: all 500ms ease;
+  }
+}
+
+.preloader {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  >.loader {
+      position: relative;
+      width: 50px;
+      height: 50px;
+
+      >svg {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          animation: a 1s linear infinite;
+      }
+  }
+}
+
+@keyframes a {
+  0% {
+      transform: rotate(-1turn);
+  }
+}
+
+
+/** - App
+--------------------------------*/
+.app {
+  background: var(--secondary);
+  font-family: var(--fontFamily);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.is-page .app-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+
+/** - App Header
+--------------------------------*/
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: var(--defaultHeight);
+  justify-content: space-between;
+  padding: 2px;
+  position: relative;
+  user-select: none;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  background: var(--primary);
+  color: var(--light);
+
+  .form-group {
+      margin: 0;
+
+      >input[type="search"],
+      >input[type="text"] {
+          border: 1px solid var(--info);
+          background: var(--dark);
+          border-radius: 0;
+          box-shadow: none;
+          margin: 0;
+          padding: var(--padding);
+      }
+  }
+
+  >.button,
+  a:not(.is-link),
+  button {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin: 2px;
+      padding: var(--padding);
+      background: var(--primary);
+      border: 1px solid var(--primary);
+      color: var(--light);
+
+      &:is(:hover, :focus, :active) {
+          border-color: var(--info);
+          color: var(--info);
+          transition: all 0.5s ease;
+      }
+
+      svg {
+          width: 20px;
+          height: 20px;
+          pointer-events: none;
+      }
+  }
+
+  >.app-header-center,
+  >.app-header-left,
+  >.app-header-right {
+      width: calc(100%/3 - 10px);
+  }
+
+  >.app-header-left {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+  }
+
+  >.app-header-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: fit-content;
+      width: calc(60% - 10px);
+
+      >h3 {
+          color: var(--info);
+          font-size: 12px;
+          line-height: 1.2;
+          margin: 0;
+          text-transform: uppercase;
+      }
+  }
+
+  >.app-header-right {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  #menu.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--warning);
+  }
+
+  #menu {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--light);
+  }
+
+  #menu svg {
+      width: 25px;
+      height: 25px;
+  }
+}
+
+/** - App Content
+--------------------------------*/
+.app-content {
+  --height: 50px;
+  height: calc(100% - var(--height));
+  overflow-y: scroll;
+  padding: 0;
+  position: relative;
+  user-select: none;
+
+  &::selection {
+      background: var(--warning);
+      color: var(--dark);
+  }
+}
+
+/** - App Sidebar
+--------------------------------*/
+aside {
+  &.app-sidebar {
+      width: 17rem;
+      height: calc(100% - 1px);
+      background: var(--primary);
+      border-top: 1px solid var(--dark);
+      border-right: 1px solid var(--dark);
+      overflow-x: auto;
+
+      nav {
+          margin: 0;
+          padding: 0;
+          a {
+              display: flex;
+              flex-direction: row;
+              align-content: center;
+              justify-content: flex-start;
+              align-items: center;
+
+              text-decoration: none;
+              margin-bottom: 1px;
+              padding: var(--padding);
+              transition: all 500ms ease-in-out;
+              background: var(--secondary);
+              border-bottom:1px solid var(--dark);
+              color: var(--info);
+              svg{
+                  width: 20px;
+                  height: 20px;
+                  color: color-mix(in srgb, var(--light) 18%, var(--primary))
+              }
+              span {
+                  margin-left:5px;
+                  font-size: calc(var(--fontSize) - 3px);
+                  font-family: var(--fontFamily);
+                  font-weight: bold;
+                  transition: all 500ms ease-in-out;
+                  color: var(--light);
+              }
+              &:is(:hover, :focus,.active) {
+                  background: var(--dark);
+                  border-bottom:1px solid var(--dark);
+                  color: var(--info);
+                  transition: all 500ms ease-in-out;
+                  span {
+                      transition: all 500ms ease-in-out;
+                      color: var(--info);
+                  }
+              }
+          }
+      }
+  }
+}
+
+
+@media (max-width:600px) {
+  aside {
+    &.app-sidebar {
+        nav {
+            a {
+                span {
+                    font-size: calc(var(--fontSize));
+                }
+            }
+        }
+    }
+  }
+}
+
+/** - App Page
+--------------------------------*/
+
+.active-menu section.app-page {
+  width: calc(100% - 17rem);
+  height: 100%;
+  margin: 0px;
+}
+
+section.app-page {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+
+  &::-webkit-scrollbar-track {
+      background-color: var(--secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-corner {
+      background-color: var(--primary);
+  }
+}
+
+/** - App Page
+--------------------------------*/
+header.app-page-section-header {
+  height: 3rem;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary);
+
+  h3 {
+      font-size: var(--font-size);
+      margin: auto 5px;
+  }
+
+  select {
+      width: fit-content;
+      margin: 0 !important;
+      max-height: 37px;
+  }
+
+  .form-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0;
+
+      button {
+          margin-left: 5px;
+      }
+  }
+
+  input[type="file"] {
+      &:is(:hover, :focus) {
+          border-color: var(--primary) !important;
+      }
+
+      &::file-selector-button {
+          padding: 2px 8px;
+          margin: 0;
+          transition: all 500ms ease-in-out;
+
+          &:is(:hover, :focus) {
+              opacity: 0.7;
+              transition: all 500ms ease-in-out;
+          }
+      }
+  }
+}
+
+@media (max-width: 480px) {
+
+  header .app-page-header input[type=search],
+  header .app-page-header input[type=text] {
+      display: none !important;
+  }
+}
+
+/** - App Page
+--------------------------------*/
+section.app-page-sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  user-select: none;
+}
+
+section.app-page-section {
+  width: calc(100% / 2 - 14px);
+  margin: 7px;
+  height: calc(100% - 14px);
+
+  textarea {
+      height: calc(100% - 3rem);
+      width: 100%;
+      margin: 0;
+      background-color: var(--primary);
+  }
+}
+section.app-page-section-full {
+  width: 100%;
+  margin:0;
+  .app-page-section-content {
+      width: 100%;
+      padding:var(--padding);
+  }
+}
+
+aside.app-sidebar {
+  display: none;
+}
+
+.active-menu aside.app-sidebar {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .active-menu aside.app-sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - var(--defaultHeight));
+      z-index: 5;
+  }
+
+  .app-header {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: relative;
+      .app-header-left{width:4rem;}
+      .app-header-center{width:calc(100% - 8rem);}
+      .app-header-right{width:4rem;}
+  }
+
+  .is-page {
+      overflow-y: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  section.app-page {
+      overflow-y: auto;
+      width: 100%;
+  }
+
+  section.app-page-sections {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+
+  section.app-page-section:first-child {
+      margin-right: 7px;
+  }
+
+  section.app-page-section {
+      width: calc(100% - 15px) !important;
+  }
+}
+
+#content {
+  height: 100%;
+}

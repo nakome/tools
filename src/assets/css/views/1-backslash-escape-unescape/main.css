@@ -1,0 +1,9 @@
+.app {
+    --primary: #282a35;
+    --secondary: #191a21;
+    --info: #6272a4;
+    --warning: #ff79c5;
+    --danger: #ff6b6b;
+    --light: #c9c9c9;
+    --dark: #111114;
+}

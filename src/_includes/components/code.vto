@@ -1,0 +1,61 @@
+<div class="code" id="split-v-0">
+  <div class="code-header">
+    <div class="form-group">
+      <select id="chooseLanguageHtml">
+        <option value="html">HTML</option>
+        <option value="md">Markdown</option>
+      </select>
+    </div>
+    <div class="code-header-right">
+      <button type="button" class="btn" title="Format Code">
+        {{ include "icons/format.vto"}}
+      </button>
+      <button type="button" class="btn" title="Expand block">
+        {{ include "icons/expand.vto"}}
+      </button>
+    </div>
+  </div>
+  <div class="code-body">
+    <textarea name="html" id="html">{{ include "demo/html.vto"}}</textarea>
+  </div>
+</div>
+
+
+<div class="code" id="split-v-1">
+  <div class="code-header">
+    <div class="form-group">
+      <span>CSS</span>
+    </div>
+    <div class="code-header-right">
+      <button type="button" class="btn" title="Format Code">
+        {{ include "icons/format.vto"}}
+      </button>
+      <button type="button" class="btn" title="Expand block">
+        {{ include "icons/expand.vto"}}
+      </button>
+    </div>
+  </div>
+  <div class="code-body">
+    <textarea name="css" id="css">{{ include "demo/css.vto"}}</textarea>
+  </div>
+</div>
+
+
+<div class="code" id="split-v-2">
+  <div class="code-header">
+    <div class="form-group">
+      <span>JAVASCRIPT</span>
+    </div>
+    <div class="code-header-right">
+      <button type="button" class="btn" title="Format Code">
+        {{ include "icons/format.vto"}}
+      </button>
+      <button type="button" class="btn" title="Expand block">
+        {{ include "icons/expand.vto"}}
+      </button>
+    </div>
+  </div>
+  <div class="code-body">
+    <textarea name="javascript" id="javascript">{{ include "demo/js.vto"}}</textarea>
+  </div>
+</div>

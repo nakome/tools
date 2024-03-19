@@ -1,0 +1,154 @@
+---
+title: Regular Expressions Examples
+links:
+  - pattern: /\w/g
+    description: Character search.
+    explanation: This pattern searches for any word character (letters, digits, or underscores). The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /^\w+$/
+    description: Validating a name. Matches strings containing only letters and numbers.
+    explanation: This pattern validates names by ensuring that they contain only word characters (letters, digits, or underscores) from the beginning (^) to the end ($) of the string.
+
+  - pattern: /\W/g
+    description: Non-character search.
+    explanation: This pattern searches for any non-word character (anything other than letters, digits, or underscores). The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /\d/g
+    description: Digit or number search.
+    explanation: This pattern searches for any digit character (0-9). The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /\D/g
+    description: Non-digit search.
+    explanation: This pattern searches for any non-digit character. The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /\s/g
+    description: Whitespace search.
+    explanation: This pattern searches for any whitespace character (space, tab, newline, etc.). The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /\S/g
+    description: Non-whitespace search.
+    explanation: This pattern searches for any non-whitespace character. The 'g' flag ensures a global search, finding all matches in the string.
+
+  - pattern: /\n/
+    description: New line position search.
+    explanation: This pattern searches for the position of a newline character in the string.
+
+  - pattern: /\f/
+    description: Form feed position search.
+    explanation: This pattern searches for the position of a form feed character in the string.
+
+  - pattern: /\r/
+    description: Carriage return position search.
+    explanation: This pattern searches for the position of a carriage return character in the string.
+
+  - pattern: /\t/
+    description: Tab position search.
+    explanation: This pattern searches for the position of a tab character in the string.
+
+  - pattern: /\v/
+    description: Vertical tab position search.
+    explanation: This pattern searches for the position of a vertical tab character in the string.
+
+  - pattern: /o+/g
+    description: Global search for letter 'o'.
+    explanation: This pattern searches for one or more occurrences of the letter 'o' in the string. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /10?/g
+    description: Global search for '10' with optional '0'.
+    explanation: This pattern searches for the string '10', with the '0' being optional. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /te?/g
+    description: Global search for 'te' with optional 'e'.
+    explanation: This pattern searches for the string 'te', with the 'e' being optional. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /\d{3}/g
+    description: Search for numbers with 3 digits.
+    explanation: This pattern searches for sequences of three consecutive digits in the string. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /\d{4,}/g
+    description: Search for numbers with at least 4 digits.
+    explanation: This pattern searches for sequences of four or more consecutive digits in the string. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /\d{4,6}/g
+    description: Search for numbers with 4 to 6 digits.
+    explanation: This pattern searches for sequences of four to six consecutive digits in the string. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /.html$/
+    description: Search for '.html' at the end of a string.
+    explanation: This pattern searches for the string '.html' occurring at the end of the string.
+
+  - pattern: /^https:/
+    description: Search for 'https:' at the beginning of a string.
+    explanation: This pattern searches for the string 'https:' occurring at the beginning of the string.
+
+  - pattern: /example(?!.com)/g
+    description: Search for 'example' not followed by '.com'.
+    explanation: This pattern searches for the string 'example' only when it is not followed by '.com'. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /example(?=.com)/g
+    description: Search for 'example' only followed by '.com'.
+    explanation: This pattern searches for the string 'example' only when it is followed by '.com'. The 'g' flag ensures a global search, finding all matches.
+
+  - pattern: /https?:\/\/[^\s]+/g
+    description: Search for URLs.
+    explanation: |
+      This pattern searches for URLs in the string.
+      - We use `https?` to search where 's' is optional.
+      - `:\/\/` matches `://`.
+      - `[^\s]+` Matches one or more characters that are not whitespace.
+      - We use the `g` global flag to find all matches in the string.
+  - pattern: /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g
+    description: Search for email addresses.
+    explanation: |
+      This pattern searches for email addresses in the string.
+      - [a-zA-Z0-9._%+-]+ matches the local part of the email (before the @ symbol).
+      - @[a-zA-Z0-9.-]+ matches the domain part of the email (after the @ symbol).
+      - \.[a-zA-Z]{2,} matches the top-level domain (e.g., .com, .org) with at least two characters.
+
+  - pattern: /(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/g
+    description: Search for URLs (HTTP, HTTPS, or FTP).
+    explanation: |
+      This pattern searches for URLs starting with 'http', 'https', or 'ftp' in the string.
+      - (https?|ftp) matches either 'http', 'https', or 'ftp'.
+      - :\/\/ matches the '://' sequence.
+      - [^\s/$.?#].[^\s]*$ matches the rest of the URL, allowing any character except whitespace, '/', '$', '.', '?', and '#'.
+
+  - pattern: /(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])/g
+    description: Search for dates in YYYY-MM-DD format.
+    explanation: |
+      This pattern searches for dates in the YYYY-MM-DD format.
+      - (19|20)\d{2} matches years from 1900 to 2099.
+      - -(0[1-9]|1[0-2])- matches months from 01 to 12.
+      - -(0[1-9]|[12]\d|3[01]) matches days from 01 to 31, considering leap years and varying days in months.
+
+  - pattern: "/#[a-fA-F0-9]{6}/g"
+    description: Search for hexadecimal color codes.
+    explanation: |
+      This pattern searches for hexadecimal color codes in the #RRGGBB format.
+      - #[a-fA-F0-9]{6} matches the # symbol followed by six hexadecimal characters (0-9, a-f, or A-F) representing red, green, and blue components.
+
+  - pattern: /(?<=\s|^)[A-Z][a-z]+(?:[A-Z][a-z]+)*(?=\s|$)/g
+    description: Search for capitalized words.
+    explanation: |
+      This pattern searches for words that start with a capital letter, followed by lowercase letters, allowing multiple words with spaces.
+      - (?<=\s|^) ensures that the word starts with a space or is at the beginning of the string.
+      - [A-Z][a-z]+ matches a capitalized word.
+      - (?: [A-Z][a-z]+)* allows multiple words separated by spaces.
+      - (?=\s|$) ensures that the word ends with a space or is at the end of the string.
+
+---
+
+<h3>{{title}}</h3>
+
+<ul>
+    {{ for link of links }}
+    <li>
+        <strong>Pattern:</strong> <code>{{link.pattern |> safe }}</code><br/>
+        <strong>Description:</strong> {{link.description |> safe }}
+        {{ if link.explanation }}
+          <br/>
+          <strong>Explanation:</strong> {{link.explanation |> safe }}
+        {{ /if }}
+    </li>
+    {{ /for }}
+</ul>

@@ -1,0 +1,60 @@
+---
+lang: en
+charset: UTF-8
+title: Html editor
+description: Minimal code editor like Codepen
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+page: 0-html-editor
+style: ./assets/css/views/0-html-editor/main.css
+javascript: ./assets/js/views/0-html-editor/main.js
+url: /0-html-editor.html
+---
+
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="{{charset}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  {{ include "components/meta.vto"}}
+  {{ include "components/vendor-css.vto"}}
+  {{ include "components/links.vto"}}
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="{{style}}">
+
+  <script rel="javascript">
+    let language = "{{lang}}";
+  </script>
+</head>
+
+<body>
+  {{ include "components/preloader.vto"}}
+  <!-- app -->
+  <main class="app">
+    {{ include "components/header.vto"}}
+    <!-- app-content -->
+    <section class="app-content">
+      <div class="split-horizontal">
+        <div class="split-vertical" id="split-h-1">
+          <div class="split-vertical-code">
+            {{ include "components/code.vto"}}
+          </div>
+        </div>
+        <div class="split-vertical" id="split-h-2">
+          <iframe id="framePreview" title="Preview" src="./iframe.html"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {{ include "components/vendor.vto"}}
+
+  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
+  <script rel="javascript" type="module" src="{{javascript}}"></script>
+</body>
+
+</html>

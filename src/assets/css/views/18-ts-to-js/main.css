@@ -1,0 +1,8 @@
+.app-page-section:first-child .CodeMirror {
+    height:calc(100% - 3rem);
+    border-radius:var(--borderRadius);
+}
+ .CodeMirror {
+    height:100%;
+    border-radius:var(--borderRadius);
+}

@@ -1,0 +1,47 @@
+---
+lang: en
+charset: UTF-8
+title: Encode image base64
+description: Encode image base64 in the editor
+author: Moncho Varela
+keywords: javascript,editor,Snippex,md
+tileColor: #282a35
+themeColor: #191a21
+page: 3-base64-image-encode-decode
+style: ./assets/css/views/3-base64-image-encode-decode/main.css
+javascript: ./assets/js/views/3-base64-image-encode-decode/main.js
+url: /3-base64-image-encode-decode.html
+layout: layouts/tool.vto
+---
+
+<!-- app -->
+<main class="app is-page">
+  {{ include "components/header-page.vto"}}
+  <!-- app-content -->
+  <section class="app-content">
+    <aside class="app-sidebar">
+      {{ include "components/list.vto"}}
+    </aside>
+    <section class="app-page">
+      <section class="app-page-sections">
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <h3>Input: </h3>
+            <div class="form-group">
+              <button class="btn" id="copyBtn">📋 Copy</button>
+            </div>
+          </header>
+          <textarea id="textAreaInput" spellcheck="false"></textarea>
+        </section>
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <input type="file" id="image-input" accept="image/*" />
+          </header>
+          <div id="image">
+            <img id="image-display" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==" style="display:none" />
+          </div>
+        </section>
+      </section>
+    </section>
+  </section>
+</main>

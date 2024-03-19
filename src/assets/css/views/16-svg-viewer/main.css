@@ -1,0 +1,31 @@
+.app-page-section .CodeMirror,
+.app-page-section textarea {
+    height: calc(100% - 3rem);
+    border-radius: var(--borderRadius);
+}
+
+#image {
+    width: 100%;
+    height: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding);
+    border: 1px dashed var(--light);
+    border-radius: 4px;
+    background-color: var(--secondary);
+    background-image: linear-gradient(135deg,
+        var(--primary) 54%,
+        transparent 5%),
+      linear-gradient(225deg, var(--primary) 45%, transparent 5%),
+      linear-gradient(45deg, var(--primary) 45%, transparent 5%),
+      linear-gradient(315deg, var(--primary) 45%, var(--light) 5%);
+    background-size: 10px 10px;
+    background-repeat: repeat;
+    opacity: 0.8;
+    user-select: none;
+}
+
+img#image-display {
+    max-width: 100%;
+}
