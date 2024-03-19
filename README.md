@@ -2,6 +2,23 @@
 
 Set of simple tools for web development.
 
+
+Make sure you have [Deno installed](https://deno.land/#installation).
+
+
+**Build:**
+
+```bash
+    deno task build
+```
+
+**Serve:**
+
+```bash
+    deno task serve
+```
+
+
 - [HTML Editor](https://snippex.surge.sh/0-html-editor.html): Tool for editing and manipulating HTML code.
 - [Markdown Editor](https://snippex.surge.sh/24-md-editor.html): Text editor in Markdown format, which can be converted to HTML.
 - [Backslash Escape/Unescape](https://snippex.surge.sh/1-backslash-escape-unescape.html): Converts characters escaped with backslashes (\) to their unescaped representation and vice versa.
@@ -31,16 +48,3 @@ Set of simple tools for web development.
 
 
 To edit the application I have used Prepros which is a tool that compiles your files, transpiles your JavaScript, reloads your browsers and makes it really easy to develop & test your websites so you can focus on making them perfect. [➡️ Prepros ](https://prepros.io/)
-
-You can use `servor` to start a simple server.
-
-_Run server:_
-
-    npm run start
-
-_Output:_
-
-    🗂  Serving:   /home/nakome/tools
-
-    🏡 Local:     http://localhost:8080
-    📡 Network:   http://192.168.1.104:8080
