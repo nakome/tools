@@ -2,3 +2,5 @@ _site
 _bin
 _cache
 .surgeignore
+public/
+deno.lock

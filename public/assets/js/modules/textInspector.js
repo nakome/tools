@@ -1,1 +1,0 @@
-export default function textInspector(t){let n=t.length,e=t.split(/\s+/).filter((function(t){return t.length>0})).length,r=t.split(/\r\n|\r|\n/).length,l={};return t.split(/\s+/).forEach((function(t){(t=t.toLowerCase()).length>0&&(l[t]=(l[t]||0)+1)})),{characters:n,words:e,lines:r,wordDistribution:l}}

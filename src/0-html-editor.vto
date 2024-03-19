@@ -11,28 +11,9 @@ page: 0-html-editor
 style: ./assets/css/views/0-html-editor/main.css
 javascript: ./assets/js/views/0-html-editor/main.js
 url: /0-html-editor.html
+layout: layouts/codemirror.vto
 ---
 
-<!DOCTYPE html>
-<html lang="{{lang}}">
-<head>
-  <meta charset="{{charset}}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{title}}</title>
-  {{ include "components/meta.vto"}}
-  {{ include "components/vendor-css.vto"}}
-  {{ include "components/links.vto"}}
-
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="{{style}}">
-
-  <script rel="javascript">
-    let language = "{{lang}}";
-  </script>
-</head>
-
-<body>
-  {{ include "components/preloader.vto"}}
   <!-- app -->
   <main class="app">
     {{ include "components/header.vto"}}
@@ -52,9 +33,3 @@ url: /0-html-editor.html
   </main>
 
   {{ include "components/vendor.vto"}}
-
-  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
-  <script rel="javascript" type="module" src="{{javascript}}"></script>
-</body>
-
-</html>

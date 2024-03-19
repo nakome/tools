@@ -1,1 +1,0 @@
-export default function sanitizeHtml(t,e){try{const a=html_beautify(DOMPurify.sanitize(t.getValue()));e.setValue(a)}catch(t){e.setValue(`Error sanitizing HTML: ${t.message}`)}}

@@ -1,1 +1,0 @@
-export default function createElement(e,t,n){let r=document.createElement(e);if(n)for(const[e,t]of Object.entries(n))r[e]=t;return t.appendChild(r),r}

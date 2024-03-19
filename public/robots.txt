@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://snippex.surge.sh/sitemap.xml

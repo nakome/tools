@@ -1,1 +1,0 @@
-export default async function formatCode(t,n){try{const a=await fetchCode(t,n);return a.status?a.data:"Error: "+JSON.stringify(a)}catch(t){return t}}async function fetchCode(t,n){let a={method:"POST",body:JSON.stringify(n),headers:{"content-type":"application/json"}};const e=await fetch(t,a);return await e.json()}

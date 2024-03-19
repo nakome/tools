@@ -1,1 +1,0 @@
-const storage=(t,e)=>null==e?JSON.parse(localStorage.getItem(t)):localStorage.setItem(t,JSON.stringify(e));export default storage;

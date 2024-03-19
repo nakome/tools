@@ -11,31 +11,9 @@ page: 24-md-editor
 style: ./assets/css/views/24-md-editor/main.css
 javascript: ./assets/js/views/24-md-editor/main.js
 url: /24-md-editor.html
+layout: layouts/codemirror.vto
 ---
 
-<!DOCTYPE html>
-<html lang="{{lang}}">
-<head>
-  <meta charset="{{charset}}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>{{title}}</title>
-
-  {{ include "components/meta.vto"}}
-  {{ include "components/links.vto"}}
-  {{ include "components/vendor-css.vto"}}
-
-  <link rel="stylesheet" href="./assets/css/main.css">
-  <link rel="stylesheet" href="{{style}}">
-
-  <script rel="javascript">
-    let language = "{{lang}}";
-  </script>
-</head>
-
-<body>
-  {{ include "components/preloader.vto"}}
-  <!-- app -->
   <main class="app is-page">
     {{ include "components/header-md.vto"}}
     <!-- app-content -->
@@ -79,9 +57,3 @@ url: /24-md-editor.html
   <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.5/split.min.js"
     integrity="sha512-lNjb0qWDVvt1zfSiXufaxtlFtenve3BLbvljxuMXuSr0DE0HYp5OhX0u89uwNd6MvlX1bgJ8ulfG4JMGurs8UA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script rel="javascript" type="module" src="./assets/js/main.js"></script>
-  <script rel="javascript" type="module" src="{{javascript}}"></script>
-</body>
-
-</html>

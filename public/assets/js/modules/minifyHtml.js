@@ -1,1 +1,0 @@
-import minifyJS from"./minifyJs.js";import minifyCss from"./minifyCss.js";export default function minifyHtml(i){return i.replace(/\<\!--\s*?[^\s?\[][\s\S]*?--\>/g,"").replace(/\>\s*\</g,"><").replace(/<style[^>]*>[\s\S]*?<\/style>/g,(i=>minifyCss(i))).replace(/<script[^>]*>[\s\S]*?<\/script>/g,(i=>minifyJS(i))).trim(" ")}
