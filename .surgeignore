@@ -1,6 +1,3 @@
-*.kit
-assets/kit/*
-prepros.config
 README.md
 
 node-modules/
