@@ -1,0 +1,1 @@
+export default function htmlEntities(t){const e=document.createElement("div");return e.textContent=t,e.innerHTML}

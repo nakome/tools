@@ -1,0 +1,1 @@
+const decodeUnicode=e=>decodeURIComponent(atob(e).split("").map((e=>"%"+("00"+e.charCodeAt(0).toString(16)).slice(-2))).join(""));export default decodeUnicode;

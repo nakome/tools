@@ -1,0 +1,1 @@
+import toggleFullPreview from"../../../modules/toggleFullPreview.js";export default function handleToggleFullPreview(e){return e.preventDefault(),toggleFullPreview()}

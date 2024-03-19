@@ -1,0 +1,1 @@
+export default function capitalize(e){return e&&0!==e.length?e.charAt(0).toUpperCase()+e.slice(1):""}

@@ -1,0 +1,1 @@
+import sendPostMessage from"../../../modules/sendPostMessage.js";export default function handlePostMessage(e){e.ctrlKey&&13===e.keyCode&&sendPostMessage()}

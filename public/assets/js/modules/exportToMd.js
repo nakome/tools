@@ -1,0 +1,1 @@
+export default function exportToMd(e,t){let o=new Blob([t],{type:"text/markdown"}),c=URL.createObjectURL(o),n=document.createElement("a");n.href=c,n.download=e,n.click(),URL.revokeObjectURL(c)}

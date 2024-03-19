@@ -1,0 +1,1 @@
+import{editors}from"./defaultVars.js";import storage from"../../../modules/storage.js";export default function handleCreateNew(){["editor_html_type","editor_html","editor_css","editor_js"].forEach((e=>storage(e,""))),storage("editor_links",""),editors[0].setValue(""),editors[1].setValue(""),editors[2].setValue("")}

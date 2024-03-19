@@ -1,0 +1,1 @@
+import{headerTitle}from"../../js/views/0-html-editor/controllers/defaultVars.js";export default function message(e){let t=headerTitle.textContent;headerTitle.textContent=e,setTimeout((()=>{headerTitle.textContent=t}),3e3)}

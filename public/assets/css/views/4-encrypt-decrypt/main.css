@@ -1,0 +1,1 @@
+section.app-page-section{margin:2px 2px 0;width:calc(60% - 15px)}section.app-page-section:first-child{width:40%}section.app-page-section>textarea{height:calc(50% - 2px);margin:5px}section.app-page-section:last-child textarea{height:calc(33.33333% - 3px);margin:5px}

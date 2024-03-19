@@ -1,0 +1,1 @@
+export default function encodeUnicode(e){try{return btoa(encodeURIComponent(e).replace(/%([0-9A-F]{2})/g,(function(e,r){let n=`0x${r}`;return String.fromCharCode(n)})))}catch(e){return console.error("Error encoding to Base64:",e.message),null}}

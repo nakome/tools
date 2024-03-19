@@ -1,0 +1,1 @@
+export default function pasteToClipboard(o,t){const r=o.clipboardData;if(!r)return void console.error("Clipboard API not supported.");r.getData("text")}

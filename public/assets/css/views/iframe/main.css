@@ -1,0 +1,1 @@
+.preloader{align-items:center;background:#fff;display:flex;height:calc(100vh - 40px);justify-content:center;margin:0;padding:0}.preloader .loader{height:32px;position:relative;width:32px}.preloader .loader svg{animation:a 1s linear infinite;transform:rotate(1turn)}@keyframes a{0%{transform:rotate(-1turn)}}.eruda-entry-btn{display:none!important}

@@ -1,0 +1,1 @@
+export default function exportToHTML(e,t){let o=new Blob([t],{type:"text/html"}),c=URL.createObjectURL(o),l=document.createElement("a");l.href=c,l.download=e,l.click(),URL.revokeObjectURL(c)}
