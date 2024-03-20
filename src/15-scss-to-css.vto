@@ -15,39 +15,39 @@ layout: layouts/codemirror.vto
 ---
 
 <main class="app is-page">
-    {{ include "components/header-page.vto"}}
-    <!-- app-content -->
-    <section class="app-content">
-        <aside class="app-sidebar">
-            {{ include "components/list.vto"}}
-        </aside>
-      <section class="app-page">
-        <section class="app-page-sections">
-          <section class="app-page-section">
-            <header class="app-page-section-header">
-              <button class="btn" id="convertToCss">🚀 Convert to Css</button>
-            </header>
-            <textarea id="textAreaInput" spellcheck="false"></textarea>
-          </section>
-          <section class="app-page-section">
-            <header class="app-page-section-header">
-              <h3>Css output: </h3>
-              <div class="form-group">
-                <button class="btn" id="copyBtn">📋 Copy</button>
-              </div>
-            </header>
-            <textarea id="textAreaOutput" spellcheck="false"></textarea>
-          </section>
+  {{ include "components/header-page.vto"}}
+  <!-- app-content -->
+  <section class="app-content">
+    <aside class="app-sidebar">
+      {{ include "components/list.vto"}}
+    </aside>
+    <section class="app-page">
+      <section class="app-page-sections">
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <button class="btn" id="convertToCss">🚀 Convert to Css</button>
+          </header>
+          <textarea id="textAreaInput" spellcheck="false"></textarea>
+        </section>
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <h3>Css output: </h3>
+            <div class="form-group">
+              <button class="btn" id="copyBtn">📋 Copy</button>
+            </div>
+          </header>
+          <textarea id="textAreaOutput" spellcheck="false"></textarea>
         </section>
       </section>
-  </main>
+    </section>
+</main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
-    integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"
-    integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sass/sass.min.js"
-    integrity="sha512-KX6urL7liHg1q4mBDqbaX4WGbiTlW0a4L6gwr6iBl2AUmf3n+/L0ho5mf7zJzX8wHCv6IpDbcwVQ7pKysReD8A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+  integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"
+  integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/sass/sass.min.js"
+  integrity="sha512-KX6urL7liHg1q4mBDqbaX4WGbiTlW0a4L6gwr6iBl2AUmf3n+/L0ho5mf7zJzX8wHCv6IpDbcwVQ7pKysReD8A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>

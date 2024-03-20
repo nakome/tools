@@ -28,10 +28,8 @@ let demo = `| Tables        | Are           | Cool  |
 | zebra stripes | are neat      |    $1 |
 `;
 
-textAreaInputEditor.setValue(demo);
-transformToHtml();
-
 textAreaInputEditor.on("change", transformToHtml);
+transformToHtml();
 
 demoBtn.addEventListener('click', evt => {
   evt.preventDefault();

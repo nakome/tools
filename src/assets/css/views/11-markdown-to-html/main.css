@@ -2,4 +2,5 @@
 .app-page-section textarea {
     height: calc(100% - 3rem);
     border-radius: var(--borderRadius);
+    max-height: 40rem;
 }

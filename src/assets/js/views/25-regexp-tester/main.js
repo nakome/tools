@@ -7,7 +7,7 @@ regexInput.addEventListener('input', highlightText);
 output.addEventListener('paste', evt => {
     evt.preventDefault();
     let txt = (evt.clipboardData || window.clipboardData).getData('text');
-    output.textContent = txt;
+    output.innerHTML += DOMPurify.sanitize(txt);
 });
 
 highlightText()

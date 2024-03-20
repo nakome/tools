@@ -14,20 +14,23 @@ url: /200.html
 ---
 <!doctype html>
 <html lang="{{ charset }}">
+
 <head>
     {{ include "components/meta.vto"}}
-    <link rel="stylesheet" href="{{style}}"/>
+    <link rel="stylesheet" href="{{style}}" />
 </head>
+
 <body>
     <main>
         <section>
             <h1>{{ title }}</h1>
             <p>
-                {{ description }} 
+                {{ description }}
                 <a href="/" title="Go back home">Go back home 🏠</a>
             </p>
         </section>
     </main>
     <script rel="javascript" type="module" src="{{javascript}}"></script>
 </body>
+
 </html>

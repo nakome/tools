@@ -14,37 +14,37 @@ url: /17-text-inspector.html
 layout: layouts/tool.vto
 ---
 
-  <!-- app -->
-  <main class="app is-page">
-    {{ include "components/header-page.vto"}}
-    <!-- app-content -->
-    <section class="app-content">
-      <aside class="app-sidebar">
-        {{ include "components/list.vto"}}
-      </aside>
-      <section class="app-page">
-        <section class="app-page-sections">
-          <section class="app-page-section">
-            <header class="app-page-section-header">
-              <h3>input: </h3>
-              <div class="form-group">
-                <button class="btn" id="demoBtn">🔨 Demo</button>
-                <button class="btn" id="resetBtn">🔄 Reset</button>
-              </div>
-            </header>
-            <textarea id="textAreaInput"
-              spellcheck="false">Eiusmod velit magna Duis officia laborum cillum. Quis Duis cupidatat Duis commodo nostrud ut adipiscing qui officia nisi velit mollit nisi aliquip incididunt ex sunt proident. Minim sed Duis consequat commodo id ad nisi. Amet elit et non proident deserunt ad irure aliquip. Sint consequat Ut dolor. Occaecat velit minim ullamco laborum dolore cillum consectetur nisi in ad laboris ad aute aute Ut.</textarea>
-          </section>
-          <section class="app-page-section">
-            <div id="textOutput">
-              <p>Characters: <strong> &nbsp; </strong></p>
-              <p>Words: <strong> &nbsp; </strong></p>
-              <p>Lines: <strong> &nbsp; </strong></p>
-              <p>Word Distribution:</p>
-              <pre> &nbsp; </pre>
+<!-- app -->
+<main class="app is-page">
+  {{ include "components/header-page.vto"}}
+  <!-- app-content -->
+  <section class="app-content">
+    <aside class="app-sidebar">
+      {{ include "components/list.vto"}}
+    </aside>
+    <section class="app-page">
+      <section class="app-page-sections">
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <h3>input: </h3>
+            <div class="form-group">
+              <button class="btn" id="demoBtn">🔨 Demo</button>
+              <button class="btn" id="resetBtn">🔄 Reset</button>
             </div>
-          </section>
+          </header>
+          <textarea id="textAreaInput"
+            spellcheck="false">Eiusmod velit magna Duis officia laborum cillum. Quis Duis cupidatat Duis commodo nostrud ut adipiscing qui officia nisi velit mollit nisi aliquip incididunt ex sunt proident. Minim sed Duis consequat commodo id ad nisi. Amet elit et non proident deserunt ad irure aliquip. Sint consequat Ut dolor. Occaecat velit minim ullamco laborum dolore cillum consectetur nisi in ad laboris ad aute aute Ut.</textarea>
+        </section>
+        <section class="app-page-section">
+          <div id="textOutput">
+            <p>Characters: <strong> &nbsp; </strong></p>
+            <p>Words: <strong> &nbsp; </strong></p>
+            <p>Lines: <strong> &nbsp; </strong></p>
+            <p>Word Distribution:</p>
+            <pre> &nbsp; </pre>
+          </div>
         </section>
       </section>
     </section>
-  </main>
+  </section>
+</main>

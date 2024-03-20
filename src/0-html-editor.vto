@@ -14,22 +14,22 @@ url: /0-html-editor.html
 layout: layouts/codemirror.vto
 ---
 
-  <!-- app -->
-  <main class="app">
-    {{ include "components/header.vto"}}
-    <!-- app-content -->
-    <section class="app-content">
-      <div class="split-horizontal">
-        <div class="split-vertical" id="split-h-1">
-          <div class="split-vertical-code">
-            {{ include "components/code.vto"}}
-          </div>
-        </div>
-        <div class="split-vertical" id="split-h-2">
-          <iframe id="framePreview" title="Preview" src="./iframe.html"></iframe>
+<!-- app -->
+<main class="app">
+  {{ include "components/header.vto"}}
+  <!-- app-content -->
+  <section class="app-content">
+    <div class="split-horizontal">
+      <div class="split-vertical" id="split-h-1">
+        <div class="split-vertical-code">
+          {{ include "components/code.vto"}}
         </div>
       </div>
-    </section>
-  </main>
+      <div class="split-vertical" id="split-h-2">
+        <iframe id="framePreview" title="Preview" src="./iframe.html"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
 
-  {{ include "components/vendor.vto"}}
+{{ include "components/vendor.vto"}}

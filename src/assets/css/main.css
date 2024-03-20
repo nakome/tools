@@ -1099,8 +1099,11 @@ aside.app-sidebar {
       z-index: 1;
       position: relative;
       .app-header-left{width:4rem;}
-      .app-header-center{width:calc(100% - 8rem);}
-      .app-header-right{width:4rem;}
+      .app-header-center{
+        width:calc(100% - 8rem)!important;
+        justify-content: flex-start;
+      }
+      .app-header-right{width:4rem!important;}
   }
 
   .is-page {

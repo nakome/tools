@@ -1,9 +1,8 @@
 .app-page-section:first-child{
-    width:calc(60% - 15px);
+    height:auto;
 }
 
 .app-page-section:last-child{
-    width:calc(40% - 15px);
     ul {
         margin:0;
         padding:0;
@@ -48,7 +47,8 @@
     margin-top: 1rem;
     padding: var(--padding);
     min-height: 3rem;
-
+    max-height:30rem;
+    overflow-y:auto;
     &:is(:hover, :focus) {
         outline: none;
     }

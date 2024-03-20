@@ -14,36 +14,36 @@ url: /19-url-encode-decode.html
 layout: layouts/tool.vto
 ---
 
-  <!-- app -->
-  <main class="app is-page">
-    {{ include "components/header-page.vto"}}
-    <!-- app-content -->
-    <section class="app-content">
-      <aside class="app-sidebar">
-        {{ include "components/list.vto"}}
-      </aside>
-      <section class="app-page">
-        <section class="app-page-sections">
-          <section class="app-page-section">
-            <header class="app-page-section-header">
-              <h3>Input: </h3>
-              <div class="form-group">
-                <button class="btn" id="demoBtn">🔨 Demo</button>
-                <button class="btn" id="resetBtn">🔄 Reset</button>
-              </div>
-            </header>
-            <textarea id="textAreaEncoded" spellcheck="false"></textarea>
-          </section>
-          <section class="app-page-section">
-            <header class="app-page-section-header">
-              <h3>Output: </h3>
-              <div class="form-group">
-                <button class="btn" id="copyBtn">📋 Copy</button>
-              </div>
-            </header>
-            <textarea id="textAreaDecoded" spellcheck="false"></textarea>
-          </section>
+<!-- app -->
+<main class="app is-page">
+  {{ include "components/header-page.vto"}}
+  <!-- app-content -->
+  <section class="app-content">
+    <aside class="app-sidebar">
+      {{ include "components/list.vto"}}
+    </aside>
+    <section class="app-page">
+      <section class="app-page-sections">
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <h3>Input: </h3>
+            <div class="form-group">
+              <button class="btn" id="demoBtn">🔨 Demo</button>
+              <button class="btn" id="resetBtn">🔄 Reset</button>
+            </div>
+          </header>
+          <textarea id="textAreaEncoded" spellcheck="false"></textarea>
+        </section>
+        <section class="app-page-section">
+          <header class="app-page-section-header">
+            <h3>Output: </h3>
+            <div class="form-group">
+              <button class="btn" id="copyBtn">📋 Copy</button>
+            </div>
+          </header>
+          <textarea id="textAreaDecoded" spellcheck="false"></textarea>
         </section>
       </section>
     </section>
-  </main>
+  </section>
+</main>

@@ -13,6 +13,7 @@ import resolveUrls from "lume/plugins/resolve_urls.ts";
 const site = lume({
     src: "./src",
     dest: "./public",
+    prettyUrls: false,
     location: new URL("https://snippex.surge.sh"),
 });
 
