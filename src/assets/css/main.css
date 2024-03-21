@@ -1,10 +1,10 @@
 :root {
   --primary: #282a35;
   --secondary: #191a21;
-  --info: #6272a4;
+  --info: #39b4db;
   --warning: #ff79c5;
-  --danger: #ff6b6b;
-  --light: #c9c9c9;
+  --danger: #f33535;
+  --light: #fdfdfd;
   --dark: #111114;
   --boxShadow: 0 1px 2px var(--dark);
   --fontSize: 14px;
@@ -672,7 +672,7 @@ input[type="submit"] {
       background: var(--secondary);
       height: calc(100% - 5px);
       border-radius: var(--borderRadius);
-      width: 3rem;
+      width: 35px;
       &:is(:hover, :focus) {
           outline: none !important;
           border: none !important;
@@ -689,14 +689,14 @@ input[type="submit"] {
   background: var(--primary);
   border: 1px solid var(--primary);
   color: var(--light);
-  padding: var(--padding);
+  padding: 5px 15px 5px 5px;
   border-radius: var(--borderRadius);
   box-shadow: var(--boxShadow);
   transition: all 500ms ease;
 
   &:is(:hover, :focus) {
-      background: color-mix(in srgb, var(--info), var(--primary));
-      border: 1px solid color-mix(in srgb, var(--info), var(--primary));
+    background: color-mix(in srgb, var(--secondary), var(--primary) 50%);
+    border: 1px solid color-mix(in srgb, var(--secondary), var(--primary) 50%);
       cursor: pointer;
       transition: all 500ms ease;
   }
@@ -880,6 +880,14 @@ input[type="submit"] {
   position: relative;
   user-select: none;
 
+  background-color: var(--secondary);
+  background-image: linear-gradient(135deg, var(--secondary) 54%, transparent 5%),
+      linear-gradient(225deg, var(--secondary) 45%, transparent 5%),
+      linear-gradient(45deg, var(--secondary) 45%, transparent 5%),
+      linear-gradient(315deg, var(--secondary) 45%, var(--primary) 5%);
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  opacity: 0.8;
   &::selection {
       background: var(--warning);
       color: var(--dark);
@@ -995,7 +1003,6 @@ header.app-page-section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--secondary);
 
   h3 {
       font-size: var(--font-size);
@@ -1005,7 +1012,8 @@ header.app-page-section-header {
   select {
       width: fit-content;
       margin: 0 !important;
-      max-height: 37px;
+      line-height: 1.2;
+      padding: var(--padding);
   }
 
   .form-group {
@@ -1061,7 +1069,7 @@ section.app-page-section {
   height: calc(100% - 14px);
 
   textarea {
-      height: calc(100% - 3rem);
+      height: calc(100% - 3.33rem);
       width: 100%;
       margin: 0;
       background-color: var(--primary);

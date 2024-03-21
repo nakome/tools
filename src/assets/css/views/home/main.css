@@ -26,9 +26,12 @@ nav {
 
     &:is(:hover,:focus,:focus-visible) {
       outline: none;
-      background: var(--dark);
-      border: 1px solid var(--light);
+      background: var(--secondary);
+      border: 1px solid var(--info);
       transition: all 500ms ease-in-out;
+      span{
+        color: var(--info);
+      }
     }
   }
 }
@@ -62,12 +65,18 @@ span {
     input#searchTool {
         width:100%;
         background: var(--secondary);
-        border-color: var(--light);
+        border-color: var(--dark);
         color: var(--light);
+        &::placeholder{
+          color: var(--light);
+        }
         &:is(:hover,:focus) {
           background: var(--secondary);
-          border-color: var(--warning);
-          color: var(--warning);
+          border-color: var(--info);
+          color: var(--info);
+          &::placeholder{
+            color: var(--info);
+          }
         }
     }
   }

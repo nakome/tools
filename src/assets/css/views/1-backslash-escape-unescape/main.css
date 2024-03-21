@@ -1,9 +1,13 @@
-.app {
-    --primary: #282a35;
-    --secondary: #191a21;
-    --info: #6272a4;
-    --warning: #ff79c5;
-    --danger: #ff6b6b;
-    --light: #c9c9c9;
-    --dark: #111114;
+.app-content {
+    background-color: var(--secondary);
+    background-image: linear-gradient(135deg, var(--secondary) 54%, transparent 5%),
+        linear-gradient(225deg, var(--secondary) 45%, transparent 5%),
+        linear-gradient(45deg, var(--secondary) 45%, transparent 5%),
+        linear-gradient(315deg, var(--secondary) 45%, var(--primary) 5%);
+    background-size: 10px 10px;
+    background-repeat: repeat;
+    opacity: 0.8;
+}
+header.app-page-section-header {
+    background: transparent;
 }

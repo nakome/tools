@@ -69,10 +69,10 @@
     color: var(--light);
     &.error{
         background: var(--danger);
-        color: var(--dark);
+        color: var(--light);
     }
     &.success{
         background: var(--info);
-        color: var(--dark);
+        color: var(--light);
     }
 }

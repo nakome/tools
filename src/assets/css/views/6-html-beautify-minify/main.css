@@ -1,4 +1,4 @@
  .CodeMirror {
-    height: calc(100% - 40px);
+    height: calc(100% - 50px);
     border-radius: var(--borderRadius);
 }
