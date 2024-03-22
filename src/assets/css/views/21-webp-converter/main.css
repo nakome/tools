@@ -11,7 +11,7 @@
 }
 
 #image {
-  --light: #636363;
+  --light: #4c5261;;
   border: 1px dashed var(--light);
   border-radius: 4px;
   background-color: var(--secondary);

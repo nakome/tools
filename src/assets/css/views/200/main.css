@@ -20,6 +20,7 @@
   }
 
 body {
+    --light: #4c5261;
     margin: 0;
     opacity: 1;
     overflow: hidden;
@@ -35,7 +36,6 @@ body {
     background-image: linear-gradient(135deg,var(--primary) 54%,transparent 5%),linear-gradient(225deg,var(--primary) 45%,transparent 5%),linear-gradient(45deg,var(--primary) 45%,transparent 5%),linear-gradient(315deg,var(--primary) 45%,var(--info) 5%);
     background-size: 10px 10px;
     background-repeat: repeat;
-    opacity: .8;
     user-select: none;
     color: var(--light)
 }
