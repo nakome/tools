@@ -5,8 +5,6 @@ import exportToHTML from '../../../modules/exportToHTML.js';
 import generateRandomId from '../../../modules/generateRandomId.js';
 import formatCode from "../../../modules/formatCode.js";
 
-const settings = storage('editor_theme') ?? {};
-
 let baseUrl = 'https://agasallo-1-e1977709.deta.app';
 
 const MarkdownToHtml = async (content) => await formatCode(baseUrl + "/api/convert/to/md", {
@@ -27,7 +25,7 @@ export default function handleSaveToFile() {
           <button type="button" class="btn" id="export">🗒️ Export html</button>
         </div>
         <div class="option">
-          <input type="text" placeholder="Title" id="title" value="My template/>
+          <input type="text" placeholder="Title" id="title" value="My template"/>
         </div>
         <div class="option">
             <textarea id="htmlOutput" name="htmlOutput">Working...</textarea>
@@ -67,7 +65,7 @@ async function oncreateFn() {
     lineWrapping: true,
     lineLength: 80,
     mode: "htmlmixed",
-    theme: settings.theme ?? "dracula",
+    theme: storage('editor_theme') ?? "dracula",
     gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
     foldGutter: true,
     readOnly:true
