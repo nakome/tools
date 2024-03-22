@@ -5,7 +5,7 @@
     padding:var(--padding);
     user-select: text;
     color: var(--light);
-    height: calc(100% - 3rem);
+    height: calc(100% - var(--defaultHeight));
     overflow-y: auto;
     line-height:var(--line-height);
     font-size:var(--font-size);

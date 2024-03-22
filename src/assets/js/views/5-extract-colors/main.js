@@ -6,7 +6,7 @@ const canvas = _('#cs');
 const result = _('.result');
 const fake = _('#fake');
 const preview = _('.preview');
-const appPage = _('.app-page');
+const appContent = _('.app-content');
 
 let x = '';
 let y = '';
@@ -34,7 +34,7 @@ thumbnail.addEventListener('click', function (e) {
         ctx.willReadFrequently = true;
         let p = ctx.getImageData(x, y, 1, 1).data;
         result.innerHTML = `<span>HEX: ${rgbToHex(p[0], p[1], p[2])}</span><span>RGB:  rgb(${p[0]},${p[1]},${p[2]})</span>`;
-        appPage.style.background = rgbToHex(p[0], p[1], p[2]);
+        appContent.style.background = rgbToHex(p[0], p[1], p[2]);
     });
 }, false);
 

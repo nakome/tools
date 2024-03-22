@@ -2,19 +2,13 @@
 <header class="app-header">
   <!-- app-header-left -->
   <section class="app-header-left">
+    <a class="button" href="/" title="Tools for you">
+      {{ include "icons/home.vto"}}
+    </a>
     <button type="button" title="Render code" id="renderCode">
       {{ include "icons/play.vto"}}
     </button>
-    <div class="form-group">
-      <input
-        name="title"
-        id="title"
-        required=""
-        type="text"
-        placeholder="Title"
-        value="My awesome template"
-      />
-    </div>
+    {{ include "components/themes.vto"}}
   </section>
 
   <!-- app-header-center -->
@@ -24,13 +18,6 @@
 
   <!-- app-header-right -->
   <section class="app-header-right">
-    <a
-      class="button"
-      href="/"
-      title="Tools for you"
-    >
-      {{ include "icons/tools.vto"}}
-    </a>
     <button type="button" title="View full preview" id="toggleview">
       {{ include "icons/eye.vto"}}
     </button>
@@ -43,13 +30,7 @@
     <button type="button" title="Modal settings" id="settingsNew">
       {{ include "icons/settings.vto"}}
     </button>
-    <a
-      rel="noopener"
-      target="_blank"
-      class="button"
-      href="https://github.com/nakome"
-      title="Github"
-    >
+    <a rel="noopener" target="_blank" class="button" href="https://github.com/nakome" title="Github">
       {{ include "icons/github.vto"}}
     </a>
   </section>

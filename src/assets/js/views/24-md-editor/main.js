@@ -10,74 +10,55 @@ const _i = el => document.getElementById(el);
 const preloader = _s('.preloader');
 // Header title
 const headerTitle = _s(".app-header-center h3");
-// input title
-const title = _i("title");
 // Buttons
 const renderCode = _i("renderCode");
 const saveHtmlCode = _i("saveHtmlCode");
 const toggleView = _i("toggleView");
+const selectTheme = _i("selectTheme");
+
 // Frame
 const frame = _s("iframe");
 const output = frame.contentWindow;
-
 // Horizontal split views
 const horizontalSplitView = Split(["#split-h-1", "#split-h-2"], {
     direction: "horizontal",
     minSize: 0,
     gutterSize: 5,
 });
-
 // Editor
 const mdEditor = _s('#mdEditor');
 const Editor = CodeMirror.fromTextArea(mdEditor, {
     lineWrapping: true,
-    lineNumbers:true,
+    lineNumbers: true,
     lineLength: 80,
     matchBrackets: true,
     mode: "markdown",
-    theme: "dracula",
+    theme: storage('editor_theme') ?? 'dracula',
 });
 
-if(storage("editor_md")) Editor.setValue(storage("editor_md"));
+if (storage("editor_md")) Editor.setValue(storage("editor_md"));
 
 document.body.addEventListener("keydown", evt => (evt.ctrlKey && evt.keyCode === 13) ? sendPostMessage(evt) : false);
-saveHtmlCode.addEventListener("click", evt => exportToMd(`${title.value.trim()}.md`,Editor.getValue()));
+saveHtmlCode.addEventListener("click", evt => exportToMd('filename.md', Editor.getValue()));
 renderCode.addEventListener("click", evt => sendPostMessage(evt));
 toggleView.addEventListener("click", evt => toggleFullPreview());
+// Choose theme style
+selectTheme.addEventListener("change", evt => {
+    let val = evt.currentTarget.value;
+    storage('editor_theme', val);
+    Editor.setOption('theme', val);
+}, false);
 
 // If detect mobile device toggle the view
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
 
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
-        console.log('ready?')
         preloader.style.display = "none";
     }
 };
 
-function sendPostMessage() {
-    const mdContent = Editor.getValue().replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "");
-    const mdParse = marked.parse(mdContent);
-    const mdToSend = encodeUnicode(mdParse);
-    storage('editor_md', Editor.getValue());
-    // Send post message to iframe
-    output.postMessage(
-        JSON.stringify({
-            body: {
-                content: mdToSend
-            },
-        }),
-        "*"
-    );
-    message('Markdown sent');
-}
-function message(txt) {
-    let old = headerTitle.textContent;
-    headerTitle.textContent = txt;
-    setTimeout(() => {
-        headerTitle.textContent = old;
-    }, 3000);
-}
+
 function toggleFullPreview() {
     let eye = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye"
     viewBox="0 0 16 16">
@@ -103,4 +84,29 @@ function toggleFullPreview() {
     }
 }
 
+function sendPostMessage() {
+    const mdContent = Editor.getValue().replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "");
+    const mdParse = marked.parse(mdContent);
+    const mdToSend = encodeUnicode(mdParse);
 
+    storage('editor_md', Editor.getValue());
+
+    // Send post message to iframe
+    output.postMessage(
+        JSON.stringify({
+            body: {
+                content: mdToSend
+            },
+        }),
+        "*"
+    );
+    message('Markdown sent');
+}
+
+function message(txt) {
+    let old = headerTitle.textContent;
+    headerTitle.textContent = txt;
+    setTimeout(() => {
+        headerTitle.textContent = old;
+    }, 3000);
+}

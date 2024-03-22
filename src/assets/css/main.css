@@ -1,11 +1,11 @@
 :root {
-  --primary: #282a35;
-  --secondary: #191a21;
-  --info: #39b4db;
-  --warning: #ff79c5;
+  --primary: #24242d;
+  --secondary: #1d1d25;
+  --info: #4085ff;
+  --warning: #fff877;
   --danger: #f33535;
   --light: #fdfdfd;
-  --dark: #111114;
+  --dark: #16161a;
   --boxShadow: 0 1px 2px var(--dark);
   --fontSize: 14px;
   --fontWeight: 400;
@@ -605,7 +605,7 @@ textarea {
 
 select {
   appearance: none;
-  background: var(--primary);
+  background: var(--secondary);
 }
 
 textarea[name="description"] {
@@ -726,13 +726,13 @@ input[type="submit"] {
 
   >.loader {
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: var(--defaultHeight);
+      height: var(--defaultHeight);
 
       >svg {
           position: relative;
-          width: 50px;
-          height: 50px;
+          width: var(--defaultHeight);
+          height: var(--defaultHeight);
           animation: a 1s linear infinite;
       }
   }
@@ -804,6 +804,7 @@ input[type="submit"] {
       background: var(--primary);
       border: 1px solid var(--primary);
       color: var(--light);
+      border-radius: var(--borderRadius);
 
       &:is(:hover, :focus, :active) {
           border-color: var(--info);
@@ -887,7 +888,6 @@ input[type="submit"] {
       linear-gradient(315deg, var(--secondary) 45%, var(--primary) 5%);
   background-size: 10px 10px;
   background-repeat: repeat;
-  opacity: 0.8;
   &::selection {
       background: var(--warning);
       color: var(--dark);
@@ -996,7 +996,7 @@ section.app-page {
 /** - App Page
 --------------------------------*/
 header.app-page-section-header {
-  height: 3rem;
+  height: var(--defaultHeight);
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -1046,7 +1046,6 @@ header.app-page-section-header {
 }
 
 @media (max-width: 480px) {
-
   header .app-page-header input[type=search],
   header .app-page-header input[type=text] {
       display: none !important;
@@ -1064,12 +1063,12 @@ section.app-page-sections {
 }
 
 section.app-page-section {
-  width: calc(100% / 2 - 14px);
-  margin: 7px;
-  height: calc(100% - 14px);
+  width: calc(100% / 2 - 10px);
+  margin: 5px;
+  height: calc(100% - 10px);
 
   textarea {
-      height: calc(100% - 3.33rem);
+      height: calc(100% - var(--defaultHeight));
       width: 100%;
       margin: 0;
       background-color: var(--primary);
@@ -1106,7 +1105,12 @@ aside.app-sidebar {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
       z-index: 1;
       position: relative;
-      .app-header-left{width:4rem;}
+      .app-header-left{
+        width:4rem;
+        select{
+          display:none!important;
+        }
+      }
       .app-header-center{
         width:calc(100% - 8rem)!important;
         justify-content: flex-start;

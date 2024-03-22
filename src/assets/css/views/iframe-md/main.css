@@ -1,7 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Oswald&family=Quattrocento:wght@400;700&display=swap);
 :root {
-    --font-family-header: "Oswald", sans-serif;
-    --font-family: "Quattrocento", serif;
+    --font-family-header: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --font-size: 14px;
     --font-weight: 400;
     --line-height: 1.6;
@@ -163,9 +162,9 @@ ul {
 }
 
 hr {
-    border: 0none;
-    color: var(--secondary);
-    height: 4px;
+    border: none;
+    background: var(--secondary);
+    height: 1px;
     padding: 0;
 }
 
@@ -557,10 +556,14 @@ ul:has(.task) label:has(input:checked) {
 }
 
 .preloader {
+    position:fixed;
+    top:0;
+    left:0;
     align-items: center;
-    background: #fff;
+    background: #272934;
     display: flex;
-    height: calc(100vh - 40px);
+    width:100vw;
+    height: 100vh;
     justify-content: center;
     margin: 0;
     padding: 0;

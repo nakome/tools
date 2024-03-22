@@ -6,7 +6,7 @@ section.app-page-section:first-child {
 section.app-page-section:last-child {
     width: calc(100% - 390px);
     margin: 10px;
-    height: calc(100% - 3rem);
+    height: calc(100% - var(--defaultHeight));
 }
 
 pre#output {

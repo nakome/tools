@@ -1,7 +1,7 @@
 #output,
 #image {
   width: 100%;
-  height: calc(100% - 3rem);
+  height: calc(100% - var(--defaultHeight));
   padding: var(--padding);
   display: flex;
   align-items: center;
@@ -11,6 +11,7 @@
 }
 
 #image {
+  --light: #636363;
   border: 1px dashed var(--light);
   border-radius: 4px;
   background-color: var(--secondary);
@@ -22,7 +23,6 @@
     linear-gradient(315deg, var(--primary) 45%, var(--light) 5%);
   background-size: 10px 10px;
   background-repeat: repeat;
-  opacity: 0.8;
   user-select: none;
 }
 

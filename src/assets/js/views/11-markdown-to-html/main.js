@@ -1,13 +1,15 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
+import storage from "../../../js/modules/storage.js";
 
 const demoBtn = document.getElementById("demoBtn");
 const copyBtn = document.getElementById("copyBtn");
 const resetBtn = document.getElementById("resetBtn");
+const selectTheme = document.getElementById("selectTheme");
 
 const textAreaInput = document.getElementById("textAreaInput");
 const textAreaInputEditor = CodeMirror.fromTextArea(textAreaInput, {
   mode: "markdown",
-  theme: "dracula",
+  theme: storage('editor_theme') ?? 'dracula',
   lineNumbers: true,
   lineWrapping: true,
 });
@@ -15,11 +17,20 @@ const textAreaInputEditor = CodeMirror.fromTextArea(textAreaInput, {
 const textAreaOutput = document.getElementById("textAreaOutput");
 const textAreaOutputEditor = CodeMirror.fromTextArea(textAreaOutput, {
   mode: "htmlmixed",
-  theme: "dracula",
+  theme: storage('editor_theme') ?? 'dracula',
   lineNumbers: true,
   lineWrapping: true,
   readOnly: true,
 });
+
+
+selectTheme.addEventListener("change", evt => {
+  let val = evt.currentTarget.value;
+  storage('editor_theme',val);
+  textAreaInputEditor.setOption('theme',val);
+  textAreaOutputEditor.setOption('theme',val);
+});
+
 
 let demo = `| Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|

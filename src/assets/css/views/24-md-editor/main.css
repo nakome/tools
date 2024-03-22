@@ -1,3 +1,5 @@
+@import "../../themes.css";
+
 .split-horizontal {
     display: flex;
     flex-direction: row;
@@ -31,7 +33,6 @@
     height: 100%;
 }
 
-
 @media (max-width: 600px) {
     .app-header-left {
         a,
@@ -52,7 +53,7 @@
 }
 .app-header {
     input {
-      background:var(--secondary);
-      border-color:var(--primary)!important;
+        background: var(--secondary);
+        border-color: var(--primary) !important;
     }
-  }
+}

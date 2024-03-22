@@ -1,14 +1,15 @@
 #image {
+  --light: #636363;
     width: 100%;
-    height: calc(100% - 3rem);
+    height: calc(100% - var(--defaultHeight));
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--padding);
 
     border: 1px dashed var(--light);
-    border-radius: 4px;
-    background-color: var(--dark);
+    border-radius: var(--borderRadius);
+    background-color: var(--primary);
     background-image: linear-gradient(
         135deg,
         var(--secondary) 54%,
@@ -19,7 +20,6 @@
       linear-gradient(315deg, var(--secondary) 45%, var(--light) 5%);
     background-size: 10px 10px;
     background-repeat: repeat;
-    opacity: 0.8;
     user-select: none
 }
 

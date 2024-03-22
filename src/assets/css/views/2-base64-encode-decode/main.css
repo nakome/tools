@@ -6,7 +6,6 @@
         linear-gradient(315deg, var(--secondary) 45%, var(--primary) 5%);
     background-size: 10px 10px;
     background-repeat: repeat;
-    opacity: 0.8;
 }
 header.app-page-section-header {
     background: transparent;

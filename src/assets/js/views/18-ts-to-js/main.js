@@ -1,22 +1,33 @@
-const convertToCss = document.getElementById("convertToCss");
+import storage from "../../../js/modules/storage.js";
 
+const convertToCss = document.getElementById("convertToCss");
 const textAreaInput = document.getElementById("textAreaInput");
+const textAreaOutput = document.getElementById("textAreaOutput");
+const selectTheme = document.getElementById("selectTheme");
+
 const textAreaInputEditor = CodeMirror.fromTextArea(textAreaInput, {
-  theme: "dracula",
+  mode: "text/typescript",
+  theme: storage('editor_theme') ?? 'dracula',
   lineNumbers: true,
   matchBrackets: true,
-  lineWrapping: true,
-  mode: "text/typescript",
+  lineWrapping: true
 });
 
-const textAreaOutput = document.getElementById("textAreaOutput");
 const textAreaOutputEditor = CodeMirror.fromTextArea(textAreaOutput, {
   mode: "javascript",
-  theme: "dracula",
+  theme: storage('editor_theme') ?? 'dracula',
   lineNumbers: true,
   lineWrapping: true,
   readOnly: true,
 });
+
+selectTheme.addEventListener("change", evt => {
+  let val = evt.currentTarget.value;
+  storage('editor_theme',val);
+  textAreaInputEditor.setOption('theme',val);
+  textAreaOutputEditor.setOption('theme',val);
+});
+
 
 let demo = `interface User {
   id: number

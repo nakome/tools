@@ -1,6 +1,7 @@
 const appContent = document.querySelector('.app-content');
 const appMenu = document.getElementById('menu');
 const headerTitle = document.getElementById('header-title');
+const preloader = document.querySelector('.preloader');
 
 if (headerTitle) {
     const slug = window.location.pathname.replace('/','').replace('.html', '');
@@ -13,16 +14,14 @@ appMenu && appMenu.classList.remove('active');
 appContent && appContent.classList.remove('active-menu');
 
 // You can detect when the document is ready…
-document.addEventListener('DOMContentLoaded', () => {
-    appMenu && appMenu.addEventListener("click", (evt) => {
-        evt.preventDefault();
-        appMenu.classList.toggle('active');
-        appContent.classList.toggle('active-menu');
-    }, false);
-}, false);
-
 document.onreadystatechange = () => {
+    console.log(document.readyState);
     if (document.readyState === "complete") {
-        document.querySelector('.preloader').style.display = "none";
+        preloader.style.display = "none";
+        appMenu && appMenu.addEventListener("click", (evt) => {
+            evt.preventDefault();
+            appMenu.classList.toggle('active');
+            appContent.classList.toggle('active-menu');
+        }, false);
     }
 };

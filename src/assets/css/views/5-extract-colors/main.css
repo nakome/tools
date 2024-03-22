@@ -8,8 +8,8 @@
 .thumbnail {
     position: relative;
     display: block;
-    width: calc(100% - 3rem);
-    max-width: 768px;
+    width: calc(100% - var(--defaultHeight));
+    max-width: calc(600px - 10px);
     overflow: hidden;
     margin: 5px;
     margin-top: 60px;

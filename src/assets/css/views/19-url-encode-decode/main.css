@@ -1,4 +1,4 @@
 .app-page-section textarea {
-    height: calc(100% - 3rem);
+    height: calc(100% - var(--defaultHeight));
     border-radius: var(--borderRadius);
 }

@@ -1,10 +1,11 @@
-import { editors, title,chooseLanguageHtml } from "./defaultVars.js";
+import { editors,chooseLanguageHtml } from "./defaultVars.js";
 import storage from "../../../modules/storage.js";
 import createModalWindow from "../../../modules/createModalWindow.js";
 import exportToHTML from '../../../modules/exportToHTML.js';
 import generateRandomId from '../../../modules/generateRandomId.js';
 import formatCode from "../../../modules/formatCode.js";
 
+const settings = storage('editor_theme') ?? {};
 
 let baseUrl = 'https://agasallo-1-e1977709.deta.app';
 
@@ -24,6 +25,9 @@ export default function handleSaveToFile() {
         <div class="option">
           <button type="button" class="btn" id="copy">💾 Copy code</button>
           <button type="button" class="btn" id="export">🗒️ Export html</button>
+        </div>
+        <div class="option">
+          <input type="text" placeholder="Title" id="title" value="My template/>
         </div>
         <div class="option">
             <textarea id="htmlOutput" name="htmlOutput">Working...</textarea>
@@ -56,15 +60,17 @@ export default function handleSaveToFile() {
 async function oncreateFn() {
 
   // Create Codemirror
-  let htmlOutput = document.querySelector("#htmlOutput");
+  const htmlOutput = document.getElementById("htmlOutput");
+  const title = document.getElementById("title");
   const editorOutput = CodeMirror.fromTextArea(htmlOutput, {
     lineNumbers: true,
-    lineWrapping: true, // Activar el wrap de líneas
-    lineLength: 80, // Establecer la longitud máxima de línea
+    lineWrapping: true,
+    lineLength: 80,
     mode: "htmlmixed",
-    theme: "dracula",
+    theme: settings.theme ?? "dracula",
     gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
     foldGutter: true,
+    readOnly:true
   });
 
   // Create links and scripts
@@ -84,7 +90,6 @@ async function oncreateFn() {
   let htmlCodeBlock = html_beautify(editors[0].getValue());
   if(chooseLanguageHtml.value === 'md') {
     htmlCodeBlock = await MarkdownToHtml(editors[0].getValue());
-    console.log('get this');
   }
 
   // Create template

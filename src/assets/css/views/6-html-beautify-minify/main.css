@@ -1,4 +1,6 @@
+@import "../../themes.css";
+
  .CodeMirror {
-    height: calc(100% - 50px);
+    height: calc(100% - var(--defaultHeight));
     border-radius: var(--borderRadius);
 }

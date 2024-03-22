@@ -1,12 +1,14 @@
+@import "../../themes.css";
+
 .app-page-section .CodeMirror,
 .app-page-section textarea {
-    height: calc(100% - 3rem);
+    height: calc(100% - var(--defaultHeight));
     border-radius: var(--borderRadius);
 }
 
 #image {
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - var(--defaultHeight));
     display: flex;
     align-items: center;
     justify-content: center;

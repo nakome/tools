@@ -6,6 +6,7 @@ import {
   settingsNew,
   preloader,
   toggleView,
+  selectTheme,
   chooseLanguageHtml
 } from "./controllers/defaultVars.js";
 import toggleFullPreview from "../../modules/toggleFullPreview.js";
@@ -40,6 +41,13 @@ createNewSnippet.addEventListener("click", handleCreateNew);
 renderCode.addEventListener("click", handlePreviewCode);
 settingsNew.addEventListener("click", handleOpenSettings);
 toggleView.addEventListener("click", handleToggleFullPreview);
+selectTheme.addEventListener("change", evt => {
+  let val = evt.currentTarget.value;
+  storage('editor_theme',val);
+  editors.forEach(editor => editor.setOption('theme',val));
+})
+
+
 
 // If detect mobile device toggle the view
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
@@ -53,7 +61,6 @@ if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
  */
 document.onreadystatechange = () => {
   if (document.readyState === "complete") {
-    console.log('ready?')
     preloader.style.display = "none";
   }
 };

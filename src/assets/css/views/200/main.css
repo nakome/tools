@@ -1,22 +1,23 @@
 :root {
     --primary: #282a35;
     --secondary: #191a21;
-    --info: #6272a4;
+    --info: #39b4db;
     --warning: #ff79c5;
-    --danger: #ff6b6b;
-    --light: #c9c9c9;
+    --danger: #f33535;
+    --light: #fdfdfd;
     --dark: #111114;
     --boxShadow: 0 1px 2px var(--dark);
     --fontSize: 14px;
     --fontWeight: 400;
-    --fontFamily: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    --fontFamily: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --fontFamilyCode:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --lineHeight: 1.5;
     --borderRadius: 4px;
     --padding: 8px 10px;
     --defaultHeight: 50px;
     --letterSpacing: 0.5px;
-    --media: 768px
-}
+    --media: 768px;
+  }
 
 body {
     margin: 0;

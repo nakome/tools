@@ -1,3 +1,5 @@
+@import "../../themes.css";
+
 .split-horizontal {
   display: flex;
   flex-direction: row;
@@ -40,6 +42,9 @@
   height: 100%;
 }
 
+.winbox.modal:after {
+  background: hwb(216 5% 91% / 0.158);
+}
 .winbox {
   background: var(--primary) !important;
 
@@ -94,7 +99,7 @@
       }
     }
 
-    >a,
+    > a,
     button {
       align-items: center;
       background: var(--secondary);
@@ -129,14 +134,13 @@
 }
 
 @media (max-width: 600px) {
-
-
-  .app-header-left{
-    a,button {
+  .app-header-left {
+    a,
+    button {
       min-width: 42px !important;
     }
     input {
-      display:none!important;
+      display: none !important;
     }
   }
   .app-header-center {
@@ -166,7 +170,7 @@
 
 .app-header {
   input {
-    background:var(--secondary);
-    border-color:var(--primary)!important;
+    background: var(--secondary);
+    border-color: var(--primary) !important;
   }
 }

@@ -7,7 +7,7 @@
         margin:0;
         padding:0;
         list-style:none;
-        max-height:calc(100% - 3rem);
+        max-height:calc(100% - var(--defaultHeight));
         overflow-x:auto;
     }
     li {
@@ -46,7 +46,7 @@
 #output {
     margin-top: 1rem;
     padding: var(--padding);
-    min-height: 3rem;
+    min-height: var(--defaultHeight);
     max-height:30rem;
     overflow-y:auto;
     &:is(:hover, :focus) {

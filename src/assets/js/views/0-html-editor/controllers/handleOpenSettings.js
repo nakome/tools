@@ -1,7 +1,6 @@
 import createModalWindow from "../../../modules/createModalWindow.js";
 import sendPostMessage from "../../../modules/sendPostMessage.js";
 import storage from "../../../modules/storage.js";
-
 let settingsModal = null;
 
 /**
@@ -65,7 +64,7 @@ function oncreateFn() {
     storage("editor_links", {
       meta: metaTags.value,
       css: cssLinks,
-      js: jsLinks,
+      js: jsLinks
     });
 
     sendPostMessage();
