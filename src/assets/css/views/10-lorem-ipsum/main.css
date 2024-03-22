@@ -1,4 +1,7 @@
 .app-page-section {
+  &:first-child{
+    padding:var(--padding);
+  }
   #output {
     margin: 0;
     white-space: pre-wrap;
