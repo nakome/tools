@@ -1,5 +1,3 @@
-@import "../../themes.css";
-
 .app-content {
     background-color: var(--secondary);
     background-image: linear-gradient(135deg, var(--secondary) 54%, transparent 5%),
