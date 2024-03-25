@@ -1,4 +1,4 @@
-import { editors,chooseLanguageHtml } from "./defaultVars.js";
+import { editors,chooseLanguageHtml } from "./vars.js";
 import storage from "../../../modules/storage.js";
 import createModalWindow from "../../../modules/createModalWindow.js";
 import exportToHTML from '../../../modules/exportToHTML.js';

@@ -1,4 +1,4 @@
-import { editors } from "./defaultVars.js";
+import { editors } from "./vars.js";
 import storage from "../../../modules/storage.js";
 
 /**

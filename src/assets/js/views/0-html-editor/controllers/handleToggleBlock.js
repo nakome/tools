@@ -1,4 +1,4 @@
-import {verticalSplitView} from "./defaultVars.js";
+import {verticalSplitView} from "./vars.js";
 
 /**
  * Function to toggle the collapse of blocks.

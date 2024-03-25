@@ -1,4 +1,4 @@
-import { editors,chooseLanguageHtml } from "./defaultVars.js";
+import { editors,chooseLanguageHtml } from "./vars.js";
 import message from "../../../modules/message.js";
 
 /**
