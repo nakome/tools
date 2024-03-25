@@ -6,14 +6,6 @@ import {
   output,
   chooseLanguageHtml,
 } from "../../js/views/0-html-editor/controllers/vars.js";
-import formatCode from "./formatCode.js";
-
-let baseUrl = "https://agasallo-1-e1977709.deta.app";
-
-const MarkdownToHtml = async (content) =>
-  await formatCode(baseUrl + "/api/convert/to/md", {
-    html_code: content,
-  });
 
 /**
  * Sends a post message with content, css, js, and links to the output.
@@ -32,6 +24,13 @@ export default async function sendPostMessage() {
   // Get links
   let saveLinks = storage("editor_links") ?? {};
 
+  let mdContent = '';
+  let mdParse = '';
+  if(chooseLanguageHtml.value !== "html") {
+    mdContent = editors[0].getValue().replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "");
+    mdParse = marked.parse(mdContent);
+  }
+
   // Send post message to iframe
   output.postMessage(
     JSON.stringify({
@@ -39,7 +38,7 @@ export default async function sendPostMessage() {
         content: encodeUnicode(
           chooseLanguageHtml.value === "html"
             ? editors[0].getValue()
-            : await MarkdownToHtml(editors[0].getValue())
+            : mdParse
         ),
         css: encodeUnicode(editors[1].getValue()),
         js: encodeUnicode(editors[2].getValue()),
