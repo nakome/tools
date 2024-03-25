@@ -21,7 +21,7 @@ transformToHtml();
 
 convertToCss.addEventListener('click', evt => {
   evt.preventDefault();
-  ShowToast("Converting to CSS...");
+  ShowToast("🚀 Transform to Js...", 2000);
   textAreaOutputEditor.setValue('🛸 Reciving data...');
   let w = setTimeout(() => {
     transformToHtml();
