@@ -10,7 +10,7 @@ import {
   selectTheme,
   chooseLanguageHtml
 } from "./controllers/vars.js";
-import toggleFullPreview from "../../modules/toggleFullPreview.js";
+import toggleFullPreview from "./controllers/toggleFullPreview.js";
 import storage from "../../modules/storage.js";
 import sendPostMessage from "../../modules/sendPostMessage.js";
 
@@ -29,7 +29,12 @@ import handleSaveToFile from "./controllers/handleSaveToFile.js";
 });
 
 // Set the initial values
-if (storage("editor_html_type")) chooseLanguageHtml.value = storage("editor_html_type");
+if (storage("editor_html_type")) {
+  // Change the language mode in html box
+  chooseLanguageHtml.value = storage("editor_html_type");
+  editors[0].setOption("mode", (storage("editor_html_type") === "html") ? "htmlmixed" : "markdown");
+};
+
 if (storage("editor_html")) editors[0].setValue(storage("editor_html"));
 if (storage("editor_html")) editors[0].setValue(storage("editor_html"));
 if (storage("editor_css")) editors[1].setValue(storage("editor_css"));
@@ -46,7 +51,6 @@ renderCode.addEventListener("click", evt => {
   sendPostMessage();
   // Hide code on click for mobile
   if (navigator.userAgent.toLowerCase().match(/mobile/i)) {
-    console.log('view code')
     toggleView.classList.add('active');
     toggleView.innerHTML = eyeSlashIcon;
     horizontalSplitView.setSizes([0, 100]);
@@ -58,6 +62,12 @@ selectTheme.addEventListener("change", evt => {
   storage('editor_theme', val);
   editors.forEach(editor => editor.setOption('theme', val));
 })
+
+chooseLanguageHtml.addEventListener("change", evt => {
+  let val = evt.currentTarget.value;
+  storage('editor_html_type', val);
+  editors[0].setOption("mode", (val === "html") ? "htmlmixed" : "markdown");
+});
 
 // If detect mobile device toggle the view
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
