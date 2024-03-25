@@ -1,19 +1,13 @@
-const textAreaInput = document.getElementById("textAreaInput");
-const imageDisplay = document.getElementById('image-display');
-const imgInput = document.getElementById("image-input");
-const demoBtn = document.getElementById("demoBtn");
-const resetBtn = document.getElementById("resetBtn");
-const demo = `<svg xmlns="http://www.w3.org/2000/svg" version="1.1"  width="120" height="120"> 
-  <rect x="14" y="23" width="200" height="50" fill="#f55" stroke="black" />
-</svg>`;
+import changeSvgFile from "./controllers/changeSvgFile.js";
 
-const textAreaInputEditor = CodeMirror.fromTextArea(textAreaInput, {
-  theme: "dracula",
-  lineNumbers: true,
-  lineWrapping: true,
-  matchBrackets: true,
-  mode: "xml",
-});
+import {
+  imageDisplay,
+  imgInput,
+  demoBtn,
+  resetBtn,
+  demo,
+  textAreaInputEditor
+} from "./controllers/vars.js";
 
 changeSvgFile();
 
@@ -31,14 +25,7 @@ imgInput.addEventListener('change', function (event) {
   reader.readAsText(file);
 });
 
-
 textAreaInputEditor.on('change', changeSvgFile);
 
-demoBtn.addEventListener('click', evt => textAreaInputEditor.setValue(demo),false);
-resetBtn.addEventListener('click', evt => textAreaInputEditor.setValue(""),false);
-
-function changeSvgFile() {
-  let svgContent = textAreaInputEditor.getValue() || demo;
-  imageDisplay.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgContent);
-  imageDisplay.style.display = 'block';
-}
+demoBtn.addEventListener('click', evt => textAreaInputEditor.setValue(demo), false);
+resetBtn.addEventListener('click', evt => textAreaInputEditor.setValue(""), false);
