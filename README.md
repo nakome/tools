@@ -45,6 +45,3 @@ Make sure you have [Deno installed](https://deno.land/#installation).
 - [YAML to JSON](https://snippex.surge.sh/22-yaml-to-json.html): Converts YAML data to JSON.
 - [Date generator](https://snippex.surge.sh/23-date-generator.html): Generates dates and times with various configurations.
 - [Regex tester](https://snippex.surge.sh/25-regexp-tester.html): Simply Regex test tool.
-
-
-To edit the application I have used Prepros which is a tool that compiles your files, transpiles your JavaScript, reloads your browsers and makes it really easy to develop & test your websites so you can focus on making them perfect. [➡️ Prepros ](https://prepros.io/)
