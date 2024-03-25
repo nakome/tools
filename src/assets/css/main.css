@@ -1151,21 +1151,29 @@ aside.app-sidebar {
 
 .toast_container {
   position: fixed;
-  left: 50%;
-  top: calc(var(--defaultHeight) + 15px);
+  top:calc(100% - var(--defaultHeight));
+  left:0;
+  right:0;
+  bottom:0;
+  margin:auto;
   opacity: 0;
-  transition: opacity 3.0s ease;
-  z-index:999;
+  bottom: 15px;
+  width:fit-content;
+  height:fit-content;
+  box-shadow: 0 3px 3px var(--dark);
+  transition: opacity 3s ease;
+  z-index: 999999;
 }
+
 .toast_body {
-  margin: 0 -50%;
-  float: left;
-  border-radius: var(--borderRadius);
-  padding: var(--padding);
+  width:fit-content;
   background: var(--primary);
+  border-radius: var(--borderRadius);
   color: var(--light);
+  padding: var(--padding)
 }
+
 div.toast_shown {
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity .4s ease
 }
