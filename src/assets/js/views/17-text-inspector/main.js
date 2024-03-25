@@ -1,11 +1,5 @@
-import textInspector from "../../../js/modules/textInspector.js";
-import htmlEntities from "../../../js/modules/htmlEntities.js";
-
-const textOutput = document.getElementById("textOutput");
-const textAreaInput = document.getElementById("textAreaInput");
-const demoBtn = document.getElementById("demoBtn");
-const resetBtn = document.getElementById("resetBtn");
-
+import handleTextInspector from "./controllers/handleTextInspector.js";
+import { textAreaInput, demoBtn, resetBtn } from "./controllers/vars.js";
 
 handleTextInspector(textAreaInput.value);
 
@@ -15,29 +9,10 @@ demoBtn.addEventListener('click', evt => {
     evt.preventDefault();
     textAreaInput.value = 'Hello World this is a example content';
     handleTextInspector(textAreaInput.value);
-},false);
+}, false);
 
 resetBtn.addEventListener('click', evt => {
     evt.preventDefault();
     textAreaInput.value = '';
-},false);
+}, false);
 
-
-function handleTextInspector(text) {
-    let str = textInspector(htmlEntities(text));
-
-    let tpl = '';
-    for (let word in str.wordDistribution) {
-        if (str.wordDistribution.hasOwnProperty(word)) {
-            let count = str.wordDistribution[word];
-            tpl += `<span><strong>Word:</strong> ${word} <strong>=</strong> ${count}</span>`
-        }
-    }
-    textOutput.innerHTML = `
-        <p>Characters: <strong>${str.characters}</strong></p>
-        <p>Words: <strong>${str.words}</strong></p>
-        <p>Lines: <strong>${str.lines}</strong></p>
-        <p>Word Distribution:</p>
-        <pre>${tpl}</pre>
-    `;
-}
