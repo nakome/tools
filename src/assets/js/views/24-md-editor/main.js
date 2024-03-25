@@ -22,9 +22,3 @@ selectTheme.addEventListener("change",toggleTheme, false);
 // If detect mobile device toggle the view
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
 
-document.onreadystatechange = () => {
-    if (document.readyState === "complete") {
-        preloader.style.display = "none";
-    }
-};
-
