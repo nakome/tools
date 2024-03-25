@@ -1,0 +1,9 @@
+export const numberStr = document.getElementById("str-number");
+export const lengthStr = document.getElementById("str-length");
+export const uniqueStr = document.getElementById("str-unique");
+export const uppercaseStr = document.getElementById("str-uppercase");
+export const lowercaseStr = document.getElementById("str-lowercase");
+export const numbersStr = document.getElementById("str-numbers");
+export const customStr = document.getElementById("str-custom");
+export const generate = document.getElementById("generate");
+export const output = document.getElementById("output");
