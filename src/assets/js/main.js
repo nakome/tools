@@ -15,7 +15,6 @@ appContent && appContent.classList.remove('active-menu');
 
 // You can detect when the document is ready…
 document.onreadystatechange = () => {
-    console.log(document.readyState);
     if (document.readyState === "complete") {
         preloader.style.display = "none";
         appMenu && appMenu.addEventListener("click", (evt) => {

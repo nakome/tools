@@ -1,7 +1,7 @@
 import {
   toggleView,
   horizontalSplitView,
-} from "../../js/views/0-html-editor/controllers/defaultVars.js";
+} from "../../js/views/0-html-editor/controllers/vars.js";
 import isMobile from "../../js/modules/isMobile.js";
 
 /**

@@ -9,18 +9,18 @@
     --boxShadow: 0 1px 2px var(--dark);
     --fontSize: 14px;
     --fontWeight: 400;
-    --fontFamily: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    --fontFamilyCode:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --fontFamily: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial,
+        Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    --fontFamilyCode: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --lineHeight: 1.5;
     --borderRadius: 4px;
     --padding: 8px 10px;
     --defaultHeight: 50px;
     --letterSpacing: 0.5px;
     --media: 768px;
-  }
+}
 
 body {
-    --light: #4c5261;
     margin: 0;
     opacity: 1;
     overflow: hidden;
@@ -31,36 +31,42 @@ body {
     font-weight: var(--fontWeight);
     letter-spacing: var(--letterSpacing);
     line-height: var(--lineHeight);
-    animation: onload .2s 1 ease;
+    animation: onload 0.2s 1 ease;
     background-color: var(--primary);
-    background-image: linear-gradient(135deg,var(--primary) 54%,transparent 5%),linear-gradient(225deg,var(--primary) 45%,transparent 5%),linear-gradient(45deg,var(--primary) 45%,transparent 5%),linear-gradient(315deg,var(--primary) 45%,var(--info) 5%);
+    background-image: linear-gradient(135deg, var(--primary) 54%, transparent 5%),
+        linear-gradient(225deg, var(--primary) 45%, transparent 5%),
+        linear-gradient(45deg, var(--primary) 45%, transparent 5%),
+        linear-gradient(315deg, var(--primary) 45%, var(--light) 5%);
     background-size: 10px 10px;
     background-repeat: repeat;
     user-select: none;
-    color: var(--light)
+    color: var(--light);
 }
 
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh
+    height: 100vh;
 }
 
 h1 {
     font-size: 3rem;
-    margin: 5px
+    margin: 5px;
+    color:var(--info);
+    text-shadow: 3px 3px 3px var(--dark);
 }
 
 p {
     font-size: 1rem;
-    margin: 0
+    margin: 0;
+    text-shadow: 3px 3px 8px var(--dark);
 }
 
 a {
-    color: var(--danger)
+    color: var(--danger);
 }
 
 section {
-    text-align: center
+    text-align: center;
 }

@@ -5,7 +5,7 @@ import {
   editors,
   output,
   chooseLanguageHtml,
-} from "../../js/views/0-html-editor/controllers/defaultVars.js";
+} from "../../js/views/0-html-editor/controllers/vars.js";
 import formatCode from "./formatCode.js";
 
 let baseUrl = "https://agasallo-1-e1977709.deta.app";
