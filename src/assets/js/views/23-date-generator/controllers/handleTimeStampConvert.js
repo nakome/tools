@@ -1,5 +1,6 @@
 import generateTplTimeResults from "./generateTplTimeResults.js";
-import messageOnTitle from "./messageOnTitle.js";
+import ShowToast from "../../../modules/showToast.js";
+
 import {
     inputDate,
     inputTime,
@@ -21,7 +22,7 @@ import {
 export default function handleTimeStampConvert() {
     const d = parseInt(inputDateTimestamp.value);
     if (isNaN(d) || !/^[0-9]+$/.test(d)) {
-        messageOnTitle("Please insert a valid timestamp number");
+        ShowToast("Insert a valid timestamp number 🙈",2000);
         return;
     }
     inputDate.value = new Date(d).toISOString().split("T")[0];

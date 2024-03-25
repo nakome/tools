@@ -1,5 +1,5 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
-
+import ShowToast from "../../modules/showToast.js";
 import {
   demoBtn,
   resetBtn,
@@ -24,9 +24,11 @@ demoBtn.addEventListener('click', evt => {
 copyBtn.addEventListener('click', evt => {
   evt.preventDefault();
   copyToClipboard(evt, textAreaDecoded.value);
+  ShowToast("Copy to clipboard ✅", 2000);
 }, false);
 
 resetBtn.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaEncoded.value = '';
+  ShowToast("Reset data 🗑️", 2000);
 }, false);

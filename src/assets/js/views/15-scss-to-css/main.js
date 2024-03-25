@@ -1,6 +1,6 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import storage from "../../../js/modules/storage.js";
-
+import ShowToast from "../../modules/showToast.js";
 import transformToHtml from "./controllers/transformToHtml.js";
 
 import {
@@ -26,6 +26,7 @@ transformToHtml();
 
 convertToCss.addEventListener('click', evt => {
   evt.preventDefault();
+  ShowToast("Converting to CSS...");
   textAreaOutputEditor.setValue('🛸 Reciving data...');
   let w = setTimeout(() => {
     transformToHtml();

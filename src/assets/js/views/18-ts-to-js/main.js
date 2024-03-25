@@ -1,6 +1,6 @@
 import storage from "../../../js/modules/storage.js";
 import transformToHtml from "./controllers/transformToHtml.js";
-
+import ShowToast from "../../modules/showToast.js";
 import {
   convertToCss,
   selectTheme,
@@ -21,6 +21,7 @@ transformToHtml();
 
 convertToCss.addEventListener('click', evt => {
   evt.preventDefault();
+  ShowToast("Converting to CSS...");
   textAreaOutputEditor.setValue('🛸 Reciving data...');
   let w = setTimeout(() => {
     transformToHtml();

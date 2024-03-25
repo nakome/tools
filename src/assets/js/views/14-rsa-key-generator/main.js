@@ -1,5 +1,6 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import generateRSAKeyPair from "./controllers/generateRSAKeyPair.js";
+import ShowToast from "../../modules/showToast.js";
 import {
     textAreaInput,
     generate,
@@ -8,7 +9,10 @@ import {
 
 
 generate.addEventListener("click", generateRSAKeyPair);
-copyBtn.addEventListener('click', evt => copyToClipboard(evt, textAreaInput));
+copyBtn.addEventListener('click', evt => {
+    copyToClipboard(evt, textAreaInput);
+    ShowToast("Copy to clipboard ✅");
+});
 
 generateRSAKeyPair();
 

@@ -1,5 +1,5 @@
 import generateTplTimeResults from "./generateTplTimeResults.js";
-import messageOnTitle from "./messageOnTitle.js";
+import ShowToast from "../../../modules/showToast.js";
 import {
     inputDate,
     inputTime,
@@ -16,7 +16,7 @@ import {
 export default function handleBinaryConvert() {
     const binaryValue = inputDateBinary.value;
     if (!/^[01]+$/.test(binaryValue)) {
-        messageOnTitle("Please insert a valid binary number");
+        ShowToast("Insert a valid binary number 🙈",2000);
         return;
     }
     // Convert number to decimal

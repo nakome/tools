@@ -1,7 +1,7 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import storage from "../../../js/modules/storage.js";
 import transformToHtml from "./controllers/transformToHtml.js";
-
+import ShowToast from "../../modules/showToast.js";
 import {
   demoBtn,
   copyBtn,
@@ -30,11 +30,13 @@ demoBtn.addEventListener('click', evt => {
 copyBtn.addEventListener('click', evt => {
   evt.preventDefault();
   copyToClipboard(evt, textAreaOutputEditor.getValue());
+  ShowToast("Copy to clipboard ✅");
 }, false);
 
 resetBtn.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaInputEditor.setValue('');
+  ShowToast("Reset data 🗑️",2000);
 }, false);
 
 

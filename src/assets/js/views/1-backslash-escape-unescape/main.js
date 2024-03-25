@@ -1,6 +1,7 @@
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import escapeBackslashes from "./controllers/escapeBackslashes.js";
 import unescapeBackslashes from "./controllers/unescapeBackslashes.js";
+import ShowToast from "../../modules/showToast.js";
 import {
   demoBtn,
   resetBtn,
@@ -18,7 +19,10 @@ escapeBackslashes(textAreaEscaped);
 textAreaEscaped.addEventListener("input", evt => escapeBackslashes(evt.currentTarget));
 textAreaUnescaped.addEventListener("input", evt => unescapeBackslashes(evt.currentTarget));
 
-copyBtn.addEventListener('click', evt => copyToClipboard(evt, textAreaUnescaped.value));
+copyBtn.addEventListener('click', evt => {
+  copyToClipboard(evt, textAreaUnescaped.value);
+  ShowToast("Copy to clipboard ✅");
+});
 demoBtn.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaEscaped.value = demo;
@@ -28,11 +32,13 @@ demoBtn.addEventListener('click', evt => {
 resetBtn.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaEscaped.value = "";
+  ShowToast("Reset data 🗑️");
 });
 
 resetBtn2.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaUnescaped.value = "";
+  ShowToast("Reset data 🗑️")
 })
 
 

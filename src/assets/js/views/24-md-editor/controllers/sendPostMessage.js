@@ -1,6 +1,6 @@
 import storage from "../../../modules/storage.js";
 import encodeUnicode from "../../../modules/encodeUnicode.js";
-import message from "./message.js";
+import ShowToast from "../../../modules/showToast.js";
 
 import {Editor,output} from "./vars.js";
 
@@ -12,7 +12,7 @@ export default function sendPostMessage() {
 
     storage('editor_md', Editor.getValue());
 
-    message('Markdown send');
+    ShowToast('🛸 Transform Markdown...', 1000);
 
     // Send post message to iframe
     output.postMessage(

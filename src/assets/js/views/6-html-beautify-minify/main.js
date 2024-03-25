@@ -2,6 +2,7 @@ import formatHtmlCode from "../../../js/modules/formatHtmlCode.js";
 import capitalize from "../../../js/modules/capitalize.js";
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import storage from "../../modules/storage.js";
+import ShowToast from "../../modules/showToast.js";
 
 import {
   outputTitle,
@@ -20,6 +21,7 @@ selectTheme.addEventListener("change", evt => {
   storage('editor_theme', val);
   textAreaInputEditor.setOption('theme', val);
   textAreaOutputEditor.setOption('theme', val);
+  ShowToast("Theme changed", 2000);
 })
 
 textAreaInputEditor.setValue(demo);
@@ -40,9 +42,11 @@ demoBtn.addEventListener('click', evt => {
 copyBtn.addEventListener('click', evt => {
   evt.preventDefault();
   copyToClipboard(evt, textAreaOutputEditor.getValue());
+  ShowToast("Copy to clipboard ✅");
 }, false);
 
 resetBtn.addEventListener('click', evt => {
   evt.preventDefault();
   textAreaInputEditor.setValue("");
+  ShowToast("Reset data 🗑️",2000);
 }, false);

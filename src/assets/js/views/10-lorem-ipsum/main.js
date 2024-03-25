@@ -1,7 +1,7 @@
 import generateLoremIpsum from "../../../js/modules/generateLoremIpsum.js";
 import copyToClipboard from "../../../js/modules/copyToClipboard.js";
 import handleGenerate from "./controllers/handleGenerate.js";
-
+import ShowToast from "../../modules/showToast.js";
 import {
   generate,
   output,
@@ -22,6 +22,7 @@ output.innerHTML = outputHtml;
 copyBtn.addEventListener('click', evt => {
   evt.preventDefault();
   copyToClipboard(evt, output.innerHTML);
+  ShowToast("Copy to clipboard ✅");
 })
 
 generate.addEventListener("click", handleGenerate, false);
