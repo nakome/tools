@@ -1,0 +1,9 @@
+export const typeOfText = document.getElementById("typeOfText");
+export const numberOfParagraphs = document.getElementById("numberOfParagraphs");
+export const minNumOfSentencies = document.getElementById("minNumOfSentencies");
+export const maxNumOfSentencies = document.getElementById("maxNumOfSentencies");
+export const minNumOfWords = document.getElementById("minNumOfWords");
+export const maxNumOfWords = document.getElementById("maxNumOfWords");
+export const generate = document.getElementById("generate");
+export const output = document.getElementById("output");
+export const copyBtn = document.getElementById("copyBtn");
