@@ -3,13 +3,7 @@ import storage from "../../../modules/storage.js";
 import createModalWindow from "../../../modules/createModalWindow.js";
 import exportToHTML from '../../../modules/exportToHTML.js';
 import generateRandomId from '../../../modules/generateRandomId.js';
-import formatCode from "../../../modules/formatCode.js";
 
-let baseUrl = 'https://agasallo-1-e1977709.deta.app';
-
-const MarkdownToHtml = async (content) => await formatCode(baseUrl + "/api/convert/to/md", {
-  html_code: content
-});
 
 /**
  * Save the HTML code in a modal window.
@@ -75,6 +69,7 @@ async function oncreateFn() {
   let linksHref = "";
   let scriptsSrc = "";
   let metaTags = "";
+
   const links = storage("editor_links");
   if (links) {
     const { meta, css, js } = links;
@@ -86,8 +81,9 @@ async function oncreateFn() {
   }
 
   let htmlCodeBlock = html_beautify(editors[0].getValue());
-  if(chooseLanguageHtml.value === 'md') {
-    htmlCodeBlock = await MarkdownToHtml(editors[0].getValue());
+  if(chooseLanguageHtml.value !== "html") {
+    const mdContent = editors[0].getValue().replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "");
+    htmlCodeBlock = marked.parse(mdContent);
   }
 
   // Create template
