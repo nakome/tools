@@ -8,7 +8,7 @@ import {
   toggleView,
   selectTheme,
   chooseLanguageHtml
-} from "./controllers/defaultVars.js";
+} from "./controllers/vars.js";
 import toggleFullPreview from "../../modules/toggleFullPreview.js";
 import storage from "../../modules/storage.js";
 
@@ -47,20 +47,6 @@ selectTheme.addEventListener("change", evt => {
   editors.forEach(editor => editor.setOption('theme',val));
 })
 
-
-
 // If detect mobile device toggle the view
 if (navigator.userAgent.toLowerCase().match(/mobile/i)) toggleFullPreview();
 
-
-/**
- * Executes when the document state changes.
- *
- * @param {} - No parameters
- * @return {} - No return value
- */
-document.onreadystatechange = () => {
-  if (document.readyState === "complete") {
-    preloader.style.display = "none";
-  }
-};
