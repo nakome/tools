@@ -1,24 +1,49 @@
 :root {
     --font-family-header: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
     --font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --font-size: 14px;
+    --font-size: 16px;
     --font-weight: 400;
-    --line-height: 1.6;
+    --line-height: 1.8;
     --transition: all 0.5s ease;
-    --primary: #2196f3;
-    --secondary: #e5e5e5;
-    --background: #fff;
-    --txt: #1d1d1d;
-    --info: #e1fcff;
-    --info-border: #c0def7;
-    --info-txt: #006976;
-    --success: #c0ffe9;
-    --success-border: #42bd91;
-    --success-txt: #11a06d;
-    --danger: #fee;
-    --danger-border: #f7c0c0;
-    --danger-txt: #742b2b;
     --gutter: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary: #333333;
+        --secondary: #e5e5e5;
+        --background: #fff;
+        --txt: #1d1d1d;
+        --links: #3d7aff;
+        --info: #e1fcff;
+        --info-border: #c0def7;
+        --info-txt: #006976;
+        --success: #c0ffe9;
+        --success-border: #42bd91;
+        --success-txt: #11a06d;
+        --danger: #fee;
+        --danger-border: #f7c0c0;
+        --danger-txt: #742b2b;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #bbb;
+        --secondary: #060606;
+        --background: #101010;
+        --txt: #ffffff;
+        --links: #3d7aff;
+        --info: #e1fcff;
+        --info-border: #c0def7;
+        --info-txt: #006976;
+        --success: #c0ffe9;
+        --success-border: #42bd91;
+        --success-txt: #11a06d;
+        --danger: #fee;
+        --danger-border: #f7c0c0;
+        --danger-txt: #742b2b;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -53,10 +78,9 @@ body > :last-child {
     margin-bottom: 0 !important;
 }
 
-a {
-    color: var(--primary);
+a{
+    color:var(--links);
 }
-
 a.anchor {
     display: block;
     padding-left: 30px;
@@ -331,7 +355,7 @@ img {
 code,
 tt {
     margin: 2px;
-    padding: 5px;
+    padding: 0 5px;
     white-space: nowrap;
     border: 1px solid var(--secondary);
     background-color: var(--background);
