@@ -371,15 +371,12 @@ pre code {
 }
 
 pre {
-    border: 1px solid var(--txt);
-    background-color: var(--txt);
-    color: var(--secondary);
     font-size: 13px;
     line-height: 20px;
     overflow: auto;
-    padding: 6px 10px;
+    padding: 6px;
     border-radius: 3px;
-    margin: 30px auto;
+    margin: 10px auto;
     white-space: pre-wrap;
     font-family: "Consolas", monospace;
 }
